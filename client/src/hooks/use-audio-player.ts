@@ -48,14 +48,13 @@ export function useAudioPlayer(audioSrc: string) {
         audioRef.current.pause();
         setIsPlaying(false);
       } else {
-        // For demo purposes, we'll simulate audio playback
         console.log('Playing national anthem: Jana Gana Mana');
+        await audioRef.current.play();
         setIsPlaying(true);
-        // Simulate a 52-second duration (actual anthem length)
-        setTimeout(() => setIsPlaying(false), 52000);
       }
     } catch (error) {
       console.error('Error playing audio:', error);
+      setIsLoading(false);
       setIsPlaying(false);
     }
   };

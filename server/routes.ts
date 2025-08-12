@@ -4,8 +4,14 @@ import path from "path";
 import express from "express";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Serve audio files
-  app.use('/api/audio', express.static(path.join(process.cwd(), 'server', 'public', 'audio')));
+  // Serve audio files with proper MIME types
+  app.use('/api/audio', express.static(path.join(process.cwd(), 'server', 'public', 'audio'), {
+    setHeaders: (res, path) => {
+      if (path.endsWith('.mp3')) {
+        res.set('Content-Type', 'audio/mpeg');
+      }
+    }
+  }));
 
   // API routes can be added here for future features
   app.get('/api/health', (req, res) => {
