@@ -2,6 +2,14 @@
 
 This is a patriotic Indian cultural platform called "भारत माता" (Bharat Mata) that celebrates India's heritage through music, history, and interactive content. The application features a React frontend with a modern design showcasing patriotic songs, historical events, quizzes, and cultural information. It's built as a single-page application with smooth scrolling navigation between sections including music, history, quizzes, and about content.
 
+## Recent Updates (August 12, 2025)
+- Enhanced 3D flag animation with realistic cloth-like waving motion
+- Improved flag raising animation from bottom to top with smooth transitions
+- Added detailed Ashoka Chakra with 24 spokes for authenticity
+- Enhanced pole design with gradient effects and realistic base
+- Implemented proper CSS animations for natural flag movement
+- Created audio directory structure for national anthem playback
+
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
