@@ -114,11 +114,9 @@ export default function FlagAnimation() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-200/30 to-transparent"></div>
             </div>
             
-            {/* Flag edge effects for 3D appearance */}
-            <div className="absolute right-0 top-0 w-1 h-full bg-gradient-to-b from-gray-500 via-gray-400 to-gray-500 shadow-sm"></div>
+
             
-            {/* 3D depth shadow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/10 pointer-events-none"></div>
+
           </div>
           
           {/* Flag attachment to golden pole */}
