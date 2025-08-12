@@ -8,8 +8,8 @@ export function useAudioPlayer(audioSrc: string) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio(audioSrc);
-    const audio = audioRef.current;
+    const audio = new Audio(audioSrc);
+    audioRef.current = audio;
 
     const updateProgress = () => {
       if (audio.duration) {
@@ -54,7 +54,6 @@ export function useAudioPlayer(audioSrc: string) {
       }
     } catch (error) {
       console.error('Error playing audio:', error);
-      setIsLoading(false);
       setIsPlaying(false);
     }
   };
