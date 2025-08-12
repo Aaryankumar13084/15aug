@@ -117,83 +117,41 @@
 }
 
 .flag-wave-3d {
-  animation: flag3DWave 3s ease-in-out infinite;
+  animation: flag3DWave 3s ease-in-out infinite, flagSway 4s ease-in-out infinite;
+  transform-origin: left center;
   transform-style: preserve-3d;
 }
 
-.flag-3d-container {
-  perspective: 1200px;
+.flag-3d-main {
+  perspective: 1000px;
   transform-style: preserve-3d;
-}
-
-.flag-segment {
-  transform-style: preserve-3d;
-  transition: transform 0.1s ease-out;
-}
-
-/* Individual segment wave animations */
-@keyframes waveSegment0 {
-  0%, 100% { transform: rotateY(0deg) rotateZ(0deg); }
-  25% { transform: rotateY(8deg) rotateZ(1deg); }
-  50% { transform: rotateY(0deg) rotateZ(0deg); }
-  75% { transform: rotateY(-8deg) rotateZ(-1deg); }
-}
-
-@keyframes waveSegment1 {
-  0%, 100% { transform: rotateY(0deg) rotateZ(0deg); }
-  25% { transform: rotateY(12deg) rotateZ(1.5deg); }
-  50% { transform: rotateY(0deg) rotateZ(0deg); }
-  75% { transform: rotateY(-12deg) rotateZ(-1.5deg); }
-}
-
-@keyframes waveSegment2 {
-  0%, 100% { transform: rotateY(0deg) rotateZ(0deg); }
-  25% { transform: rotateY(15deg) rotateZ(2deg); }
-  50% { transform: rotateY(0deg) rotateZ(0deg); }
-  75% { transform: rotateY(-15deg) rotateZ(-2deg); }
-}
-
-@keyframes waveSegment3 {
-  0%, 100% { transform: rotateY(0deg) rotateZ(0deg); }
-  25% { transform: rotateY(18deg) rotateZ(2.5deg); }
-  50% { transform: rotateY(0deg) rotateZ(0deg); }
-  75% { transform: rotateY(-18deg) rotateZ(-2.5deg); }
-}
-
-@keyframes waveSegment4 {
-  0%, 100% { transform: rotateY(0deg) rotateZ(0deg); }
-  25% { transform: rotateY(20deg) rotateZ(3deg); }
-  50% { transform: rotateY(0deg) rotateZ(0deg); }
-  75% { transform: rotateY(-20deg) rotateZ(-3deg); }
-}
-
-@keyframes waveSegment5 {
-  0%, 100% { transform: rotateY(0deg) rotateZ(0deg); }
-  25% { transform: rotateY(18deg) rotateZ(2.5deg); }
-  50% { transform: rotateY(0deg) rotateZ(0deg); }
-  75% { transform: rotateY(-18deg) rotateZ(-2.5deg); }
-}
-
-@keyframes waveSegment6 {
-  0%, 100% { transform: rotateY(0deg) rotateZ(0deg); }
-  25% { transform: rotateY(15deg) rotateZ(2deg); }
-  50% { transform: rotateY(0deg) rotateZ(0deg); }
-  75% { transform: rotateY(-15deg) rotateZ(-2deg); }
-}
-
-@keyframes waveSegment7 {
-  0%, 100% { transform: rotateY(0deg) rotateZ(0deg); }
-  25% { transform: rotateY(10deg) rotateZ(1deg); }
-  50% { transform: rotateY(0deg) rotateZ(0deg); }
-  75% { transform: rotateY(-10deg) rotateZ(-1deg); }
 }
 
 @keyframes flag3DWave {
   0%, 100% { 
-    transform: translateY(0px);
+    transform: rotateY(0deg) rotateZ(0deg) translateY(0px);
+    box-shadow: 4px 4px 16px rgba(0,0,0,0.3);
+  }
+  25% { 
+    transform: rotateY(3deg) rotateZ(1deg) translateY(-2px);
+    box-shadow: 6px 6px 20px rgba(0,0,0,0.4);
   }
   50% { 
-    transform: translateY(-3px);
+    transform: rotateY(0deg) rotateZ(0deg) translateY(-1px);
+    box-shadow: 4px 4px 16px rgba(0,0,0,0.3);
+  }
+  75% { 
+    transform: rotateY(-3deg) rotateZ(-1deg) translateY(-2px);
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.25);
+  }
+}
+
+@keyframes flagSway {
+  0%, 100% { 
+    transform: skewY(0deg);
+  }
+  50% { 
+    transform: skewY(0.5deg);
   }
 }
 

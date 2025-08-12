@@ -60,97 +60,74 @@ export default function FlagAnimation() {
           top: animationStarted ? '30px' : 'auto'
         }}
       >
-        {/* 3D Flag with curved segments */}
-        <div className="flag-element w-full h-full relative perspective-1000">
-          <div className="flag-3d-container w-48 h-32 relative">
-            {/* Flag divided into segments for 3D wave effect */}
-            {Array.from({ length: 8 }).map((_, segmentIndex) => (
-              <div
-                key={segmentIndex}
-                className="flag-segment absolute"
-                style={{
-                  left: `${segmentIndex * 6}px`,
-                  width: '8px',
-                  height: '128px',
-                  transformOrigin: 'left center',
-                  transform: `rotateY(${Math.sin((segmentIndex * 0.5) + Date.now() * 0.001) * 15}deg)`,
-                  animation: `waveSegment${segmentIndex} 2s ease-in-out infinite`,
-                  animationDelay: `${segmentIndex * 0.1}s`
-                }}
-              >
-                {/* Saffron stripe segment */}
-                <div 
-                  className="h-1/3"
-                  style={{ 
-                    background: `linear-gradient(45deg, 
-                      hsl(${20 + segmentIndex * 2}, 100%, ${65 - segmentIndex}%), 
-                      hsl(${18 + segmentIndex * 2}, 95%, ${60 - segmentIndex}%))`,
-                    boxShadow: 'inset 0 0 4px rgba(0,0,0,0.1)'
-                  }}
-                />
-                
-                {/* White stripe segment with Ashoka Chakra */}
-                <div className="h-1/3 bg-white relative flex items-center justify-center">
-                  {segmentIndex === 3 && (
-                    <div className="w-6 h-6 relative">
-                      {/* Ashoka Chakra */}
-                      <div className="w-6 h-6 border-2 border-navy-blue rounded-full relative bg-white">
-                        <div className="absolute inset-1 border border-navy-blue rounded-full"></div>
-                        <div className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-navy-blue rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-                        {Array.from({ length: 24 }).map((_, i) => (
-                          <div
-                            key={i}
-                            className="absolute bg-navy-blue"
-                            style={{
-                              width: '0.5px',
-                              height: '10px',
-                              left: '50%',
-                              top: '50%',
-                              transformOrigin: '0.25px 5px',
-                              transform: `translate(-0.25px, -5px) rotate(${i * 15}deg)`
-                            }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  <div 
-                    className="absolute inset-0"
-                    style={{ 
-                      background: `linear-gradient(to right, 
-                        rgba(245,245,245,${0.8 + segmentIndex * 0.02}), 
-                        rgba(255,255,255,1))`,
-                      boxShadow: 'inset 0 0 4px rgba(0,0,0,0.05)'
-                    }}
-                  />
-                </div>
-                
-                {/* Green stripe segment */}
-                <div 
-                  className="h-1/3"
-                  style={{ 
-                    background: `linear-gradient(45deg, 
-                      hsl(${120 - segmentIndex * 2}, 85%, ${30 - segmentIndex}%), 
-                      hsl(${118 - segmentIndex * 2}, 90%, ${25 - segmentIndex}%))`,
-                    boxShadow: 'inset 0 0 4px rgba(0,0,0,0.1)'
-                  }}
-                />
-                
-                {/* Segment shadow for depth */}
-                <div 
-                  className="absolute right-0 top-0 w-0.5 h-full bg-black opacity-10"
-                  style={{ transform: 'translateX(0.5px)' }}
-                />
-              </div>
-            ))}
-            
-            {/* Flag attachment mechanism */}
-            <div className="absolute left-0 top-0 w-3 h-full bg-gradient-to-r from-yellow-300 to-yellow-200 shadow-inner border-r border-yellow-400 z-10">
-              {/* Attachment rings */}
-              <div className="absolute top-4 left-1/2 w-2 h-2 bg-yellow-600 rounded-full transform -translate-x-1/2 shadow-inner border border-yellow-700"></div>
-              <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-yellow-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-inner border border-yellow-700"></div>
-              <div className="absolute bottom-4 left-1/2 w-2 h-2 bg-yellow-600 rounded-full transform -translate-x-1/2 shadow-inner border border-yellow-700"></div>
+        {/* Beautiful 3D Waving Flag */}
+        <div className="flag-element w-full h-full relative">
+          <div className="flag-3d-main w-48 h-32 relative shadow-2xl rounded-r-lg overflow-hidden border border-gray-300">
+            {/* Saffron stripe */}
+            <div className="h-1/3 relative" style={{ 
+              background: 'linear-gradient(90deg, #FF9933 0%, #FF7722 50%, #FF9933 100%)',
+              boxShadow: 'inset 0 2px 4px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.1)'
+            }}>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-200/30 to-transparent"></div>
             </div>
+            
+            {/* White stripe with Ashoka Chakra */}
+            <div className="h-1/3 bg-white relative flex items-center justify-center" style={{
+              boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.05), inset 0 -2px 4px rgba(0,0,0,0.05)'
+            }}>
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-50/50 via-white to-gray-50/50"></div>
+              
+              {/* Perfect Ashoka Chakra */}
+              <div className="w-8 h-8 relative z-10">
+                <div className="w-8 h-8 border-2 border-navy-blue rounded-full relative bg-white shadow-sm">
+                  {/* Inner circle */}
+                  <div className="absolute inset-1 border border-navy-blue rounded-full"></div>
+                  
+                  {/* Center hub */}
+                  <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-navy-blue rounded-full transform -translate-x-1/2 -translate-y-1/2 border border-white shadow-sm"></div>
+                  
+                  {/* 24 Main Spokes */}
+                  {Array.from({ length: 24 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute bg-navy-blue"
+                      style={{
+                        width: '1px',
+                        height: '12px',
+                        left: '50%',
+                        top: '50%',
+                        transformOrigin: '0.5px 6px',
+                        transform: `translate(-0.5px, -6px) rotate(${i * 15}deg)`,
+                        borderRadius: '0.5px'
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            {/* Green stripe */}
+            <div className="h-1/3 relative" style={{ 
+              background: 'linear-gradient(90deg, #138808 0%, #0F6B0F 50%, #138808 100%)',
+              boxShadow: 'inset 0 2px 4px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.1)'
+            }}>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-200/30 to-transparent"></div>
+            </div>
+            
+            {/* Flag edge effects for 3D appearance */}
+            <div className="absolute right-0 top-0 w-1 h-full bg-gradient-to-b from-gray-400 via-gray-300 to-gray-400 shadow-sm"></div>
+            <div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-gray-200 via-gray-100 to-gray-200"></div>
+            
+            {/* 3D depth shadow overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/10 pointer-events-none"></div>
+          </div>
+          
+          {/* Flag attachment to golden pole */}
+          <div className="absolute left-0 top-0 w-4 h-32 bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-100 shadow-inner border-r border-yellow-400 z-20 rounded-l-sm">
+            {/* Decorative attachment rings */}
+            <div className="absolute top-4 left-1/2 w-2 h-2 bg-yellow-600 rounded-full transform -translate-x-1/2 shadow-inner border border-yellow-700"></div>
+            <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-yellow-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-inner border border-yellow-700"></div>
+            <div className="absolute bottom-4 left-1/2 w-2 h-2 bg-yellow-600 rounded-full transform -translate-x-1/2 shadow-inner border border-yellow-700"></div>
           </div>
         </div>
       </div>
