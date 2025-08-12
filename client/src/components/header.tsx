@@ -1,0 +1,125 @@
+import { useState } from "react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { Flag, Menu, X } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setMobileMenuOpen(false);
+  };
+
+  return (
+    <header className="bg-white shadow-lg sticky top-0 z-50">
+      <nav className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo Section */}
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-saffron to-flag-green rounded-full flex items-center justify-center">
+              <Flag className="text-white h-5 w-5" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-navy-blue font-hindi">भारत माता</h1>
+              <p className="text-xs text-gray-600">Patriotic India</p>
+            </div>
+          </div>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <button 
+              onClick={() => scrollToSection("home")}
+              className="text-gray-700 hover:text-saffron transition-colors font-medium"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => scrollToSection("about")}
+              className="text-gray-700 hover:text-saffron transition-colors font-medium"
+            >
+              About
+            </button>
+            
+            {/* Menu Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-gray-700 hover:text-saffron font-medium">
+                  Menu
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem onClick={() => scrollToSection("music")}>
+                  🎵 Music
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => scrollToSection("history")}>
+                  📚 History
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => scrollToSection("quiz")}>
+                  ❓ Quiz
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          
+          {/* Mobile Menu Button */}
+          <Button 
+            variant="ghost" 
+            size="sm"
+            className="md:hidden text-gray-700 hover:text-saffron"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-4 border-t pt-4">
+            <div className="space-y-2">
+              <button 
+                onClick={() => scrollToSection("home")}
+                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => scrollToSection("about")}
+                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => scrollToSection("music")}
+                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors pl-4"
+              >
+                Music
+              </button>
+              <button 
+                onClick={() => scrollToSection("history")}
+                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors pl-4"
+              >
+                History
+              </button>
+              <button 
+                onClick={() => scrollToSection("quiz")}
+                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors pl-4"
+              >
+                Quiz
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+}
