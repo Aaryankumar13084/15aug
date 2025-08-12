@@ -62,7 +62,7 @@ export default function FlagAnimation() {
       >
         {/* Beautiful 3D Waving Flag */}
         <div className="flag-element w-full h-full relative">
-          <div className="flag-3d-main w-48 h-32 relative shadow-2xl rounded-r-lg overflow-hidden border border-gray-300">
+          <div className="flag-3d-main w-48 h-32 relative shadow-2xl rounded-r-lg overflow-hidden">
             {/* Saffron stripe */}
             <div className="h-1/3 relative" style={{ 
               background: 'linear-gradient(90deg, #FF9933 0%, #FF7722 50%, #FF9933 100%)',
@@ -115,8 +115,7 @@ export default function FlagAnimation() {
             </div>
             
             {/* Flag edge effects for 3D appearance */}
-            <div className="absolute right-0 top-0 w-1 h-full bg-gradient-to-b from-gray-400 via-gray-300 to-gray-400 shadow-sm"></div>
-            <div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-gray-200 via-gray-100 to-gray-200"></div>
+            <div className="absolute right-0 top-0 w-1 h-full bg-gradient-to-b from-gray-500 via-gray-400 to-gray-500 shadow-sm"></div>
             
             {/* 3D depth shadow overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/10 pointer-events-none"></div>
