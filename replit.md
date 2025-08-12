@@ -9,6 +9,12 @@ This is a patriotic Indian cultural platform called "भारत माता" 
 - Enhanced pole design with gradient effects and realistic base
 - Implemented proper CSS animations for natural flag movement
 - Created audio directory structure for national anthem playback
+- **MAJOR UPGRADE**: Implemented advanced 3D segmented flag animation
+  - Flag divided into 8 segments for realistic curved waving effect
+  - Each segment has individual rotation and timing for natural cloth motion
+  - Golden pole design with multi-tier base matching reference image
+  - Enhanced Ashoka Chakra positioning and detail
+  - Perspective-based 3D transforms for depth and realism
 
 # User Preferences
 
