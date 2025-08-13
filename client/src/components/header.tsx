@@ -136,10 +136,24 @@ export default function Header() {
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
             ) : (
+ <>           <button
+              onClick={navigateHome}
+              className="text-gray-700 hover:text-saffron transition-colors font-medium text-sm px-2 py-1 rounded hover:bg-saffron/10"
+              data-testid="nav-home-tablet"
+            >
+              Home
+            </button>
+            <Link
+              href="/about"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium text-sm px-2 py-1 rounded hover:bg-saffron/10"
+              data-testid="nav-about-tablet"
+            >
+              About
+            </Link>
               <Menu className="h-6 w-6" />
             )}
           </Button>
-        </div>
+        </div> </>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
@@ -170,14 +184,8 @@ export default function Header() {
               </Link>
               <Link
                 href="/history"
-                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
-                data-testid="mobile-nav-history"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                📚 History
-              </Link>
-              <Link
-                href="/quiz"
+                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 trclassName="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
+       href="/quiz"
                 className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
                 data-testid="mobile-nav-quiz"
                 onClick={() => setMobileMenuOpen(false)}
@@ -185,9 +193,11 @@ export default function Header() {
                 ❓ Quiz
               </Link>
             </div>
-          </div>
+           </div>
         )}
       </nav>
     </header>
   );
 }
+
+

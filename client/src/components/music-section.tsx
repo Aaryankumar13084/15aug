@@ -15,7 +15,7 @@ const musicItems = [
   {
     title: "वन्दे मातरम् - Vande Mataram",
     description: "The inspiring national song that ignited India's freedom movement",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGcKM0V6QfTz9hq8pOcyQlYxfEYYH5raDIl0XIa3FK&s",
     bgColor: "from-flag-green to-green-600",
     textColor: "text-green-100",
     audioSrc: "/api/audio/vande.mp3"
@@ -23,7 +23,7 @@ const musicItems = [
   {
     title: "सारे जहां से अच्छा - Saare Jahan Se Achha",
     description: "The beloved patriotic song penned by Allama Iqbal",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPcewUlRKUrQoNLJq_3IA13Jv6E2Ux7iLfifbZUntR&s",
     bgColor: "from-navy-blue to-blue-800",
     textColor: "text-blue-100",
     audioSrc: "/api/audio/sare.mp3"
@@ -31,7 +31,7 @@ const musicItems = [
   {
     title: "ऐ मेरे वतन के लोगों - Ae Mere Watan Ke Logon",
     description: "Lata Mangeshkar's tribute to martyred soldiers of 1962 war",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYuewWPdEGhbyptMYv8U35XbrX1ozELcZHBP4b2gIw8Q&s",
     bgColor: "from-purple-600 to-indigo-700",
     textColor: "text-purple-100",
     audioSrc: "/api/audio/watan.mp3"
