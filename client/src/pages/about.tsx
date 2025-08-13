@@ -56,7 +56,7 @@ export default function About() {
               </div>
               
               <h2 className="text-3xl font-bold text-center text-navy-blue mb-8 font-hindi">
-                🇮🇳 Lavish 🇮🇳
+                🇮🇳 🇮🇳 Lavish 🇮🇳 🇮🇳
               </h2>
               
               <div className="space-y-6 text-lg leading-relaxed text-gray-800">
@@ -91,7 +91,7 @@ export default function About() {
               </div>
               
               <h2 className="text-3xl font-bold text-center text-navy-blue mb-8 font-hindi">
-                🇮🇳 Himanshu 🇮🇳
+                🇮🇳 🇮🇳 Himanshu 🇮🇳 🇮🇳
               </h2>
               
               <div className="space-y-6 text-lg leading-relaxed text-gray-800">
