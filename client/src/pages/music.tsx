@@ -19,8 +19,10 @@ export default function Music() {
               <span className="font-semibold">Back to Home</span>
             </Link>
             <div className="flex-1 text-center">
-              <h1 className="text-3xl font-bold text-navy-blue font-hindi">
-                🎵 भारतीय संगीत 🎵
+              <h1 className="text-3xl font-bold text-navy-blue font-hindi flex items-center justify-center gap-2">
+                <span className="text-2xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
+                <span>🎵 भारतीय संगीत 🎵</span>
+                <span className="text-2xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
               </h1>
               <p className="text-gray-600 mt-1">Patriotic Songs Collection</p>
             </div>
