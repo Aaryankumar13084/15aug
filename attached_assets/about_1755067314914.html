@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Lavish & Himanshu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #000;
+    }
+
+    nav {
+      background: #B9D9A8; /* Light green */
+      padding: 12px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #FF9933; /* Kesariya on hover */
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto 70px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      background: linear-gradient(
+        to bottom,
+        #FFD7A3 0%,   /* Light Kesariya */
+        #F9F9F9 33%,  /* Very light White */
+        #B9D9A8 66%,  /* Light Green */
+        #F9F9F9 100%
+      );
+      border: 2px solid #B9D9A8;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      color: #000;
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    h1 .flag {
+      margin: 0 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      color: #000;
+    }
+
+    strong {
+      font-weight: 700;
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      font-style: italic;
+      margin-top: 30px;
+      color: #000;
+      font-weight: 600;
+    }
+
+    .container::before {
+      content: "☸";
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 48px;
+      color: rgba(0, 0, 0, 0.05);
+      opacity: 0.05;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      p {
+        font-size: 16px;
+      }
+      nav a {
+        font-size: 16px;
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#lavish">Lavish</a>
+    <a href="#himanshu">Himanshu</a>
+  </nav>
+
+  <section id="lavish" class="container">
+    <h1><span class="flag">🇮🇳</span> Lavish <span class="flag">🇮🇳</span></h1>
+    <p>Namaste! Mera naam <strong>Lavish</strong> hai aur main is samay <strong>S. A. M Inter College, Saharanpur</strong> mein <strong>11vi kaksha mein vigyan varg ka chhatra hoon</strong>. Main <strong>Uttar Pradesh ke Saharanpur zila</strong> se hoon.</p>
+
+    <p>Mujhe technology, khaaskar <strong>coding aur web development</strong> mein gahri ruchi hai. Main ek <strong>frontend developer</strong> banne ki disha mein kaam kar raha hoon aur lagataar nai cheezein seekhkar apne <strong>skills</strong> ko behtar bana raha hoon. Mujhe <strong>website design karna</strong> aur <strong>user-friendly interface banana</strong> bahut pasand hai.</p>
+
+    <p><strong>Coding karna</strong> na sirf mera shauk hai, balki main ise apne <strong>career ke roop mein</strong> bhi aage badhana chahta hoon. Main hamesha kuch naya seekhne aur takneek ki duniya mein khud ko aage badhane ke liye tayar rehta hoon.</p>
+
+    <footer>Dhanyavaad!</footer>
+  </section>
+
+  <section id="himanshu" class="container">
+    <h1><span class="flag">🇮🇳</span> Himanshu <span class="flag">🇮🇳</span></h1>
+    <p>Namaste! Mera naam <strong>Himanshu</strong> hai aur main is samay <strong>S. A. M Inter College, Saharanpur</strong> mein <strong>11vi kaksha mein vigyan varg ka chhatra hoon</strong>. Main <strong>Uttar Pradesh ke Saharanpur zila</strong> se hoon.</p>
+
+    <p>Mujhe technology, khaaskar <strong>coding aur web development</strong> mein gahri ruchi hai. Main ek <strong>full stack developer</strong> banne ki disha mein kaam kar raha hoon aur lagataar nai cheezein seekhkar apne <strong>skills</strong> ko behtar bana raha hoon. Mujhe <strong>website design karna</strong> aur <strong>user-friendly interface banana</strong> bahut pasand hai.</p>
+
+    <p><strong>Coding karna</strong> na sirf mera shauk hai, balki main ise apne <strong>career ke roop mein</strong> bhi aage badhana chahta hoon. Main hamesha kuch naya seekhne aur takneek ki duniya mein khud ko aage badhane ke liye tayar rehta hoon.</p>
+
+    <footer>Dhanyavaad!</footer>
+  </section>
+
+</body>
+</html>

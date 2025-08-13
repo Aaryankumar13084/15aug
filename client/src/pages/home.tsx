@@ -3,7 +3,7 @@ import FlagAnimation from "@/components/flag-animation";
 import MusicSection from "@/components/music-section";
 import HistorySection from "@/components/history-section";
 import QuizSection from "@/components/quiz-section";
-import AboutSection from "@/components/about-section";
+
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Play, Pause } from "lucide-react";
@@ -82,9 +82,7 @@ export default function Home() {
       {/* Quiz Section */}
       <QuizSection />
       
-      {/* About Section */}
-      <AboutSection />
-      
+
       {/* Footer */}
       <Footer />
 

@@ -43,12 +43,13 @@ export default function Header() {
             >
               Home
             </button>
-            <button 
-              onClick={() => scrollToSection("about")}
+            <Link 
+              href="/about"
               className="text-gray-700 hover:text-saffron transition-colors font-medium"
+              data-testid="nav-about"
             >
               About
-            </button>
+            </Link>
             
             {/* Menu Dropdown */}
             <DropdownMenu>
@@ -105,12 +106,14 @@ export default function Header() {
               >
                 Home
               </button>
-              <button 
-                onClick={() => scrollToSection("about")}
+              <Link 
+                href="/about"
                 className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
+                data-testid="mobile-nav-about"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 About
-              </button>
+              </Link>
               <button 
                 onClick={() => scrollToSection("music")}
                 className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors pl-4"
