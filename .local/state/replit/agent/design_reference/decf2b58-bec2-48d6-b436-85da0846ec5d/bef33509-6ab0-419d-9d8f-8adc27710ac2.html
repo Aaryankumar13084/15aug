@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>भारत माता की जय - Patriotic India</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'saffron': '#FF9933',
+                    'flag-green': '#138808',
+                    'navy-blue': '#000080',
+                    'warm-gray': '#F8F9FA'
+                },
+                fontFamily: {
+                    'hindi': ['Noto Sans Devanagari', 'sans-serif'],
+                    'english': ['Inter', 'sans-serif']
+                }
+            }
+        }
+    };
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 33%, #FFFFFF 66%, #138808 100%);
+        }
+        
+        .flag-wave {
+            animation: wave 3s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotateY(0deg) rotateX(0deg); }
+            25% { transform: rotateY(5deg) rotateX(2deg); }
+            50% { transform: rotateY(0deg) rotateX(-2deg); }
+            75% { transform: rotateY(-5deg) rotateX(2deg); }
+        }
+        
+        .pole-animation {
+            animation: raiseFlag 4s ease-out;
+        }
+        
+        @keyframes raiseFlag {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(0%); }
+        }
+        
+        #flag-container {
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .anthem-button {
+            background: linear-gradient(45deg, #FF9933, #138808);
+            transition: all 0.3s ease;
+        }
+        
+        .anthem-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-warm-gray font-english">
+    
+    <!-- @COMPONENT: Header Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo Section -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-saffron to-flag-green rounded-full flex items-center justify-center">
+                        <i class="fas fa-flag text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-navy-blue font-hindi">भारत माता</h1>
+                        <p class="text-xs text-gray-600">Patriotic India</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-saffron transition-colors font-medium" data-bind="navigation.home">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-saffron transition-colors font-medium" data-bind="navigation.about">About</a>
+                    
+                    <!-- Menu Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-saffron transition-colors font-medium flex items-center space-x-1" data-event="click:toggleMenu">
+                            <span>Menu</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        
+                        <!-- @COMPONENT: DropdownMenu -->
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                            <div class="py-2">
+                                <a href="#music" class="block px-4 py-2 text-gray-700 hover:bg-saffron hover:text-white transition-colors" data-bind="menu.music">
+                                    <i class="fas fa-music mr-2"></i>Music
+                                </a>
+                                <a href="#history" class="block px-4 py-2 text-gray-700 hover:bg-saffron hover:text-white transition-colors" data-bind="menu.history">
+                                    <i class="fas fa-book mr-2"></i>History
+                                </a>
+                                <a href="#quiz" class="block px-4 py-2 text-gray-700 hover:bg-saffron hover:text-white transition-colors" data-bind="menu.quiz">
+                                    <i class="fas fa-question-circle mr-2"></i>Quiz
+                                </a>
+                            </div>
+                        </div>
+                        <!-- @END_COMPONENT: DropdownMenu -->
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700 hover:text-saffron" data-event="click:toggleMobileMenu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <!-- @STATE: mobileMenuOpen:boolean = false -->
+            <div class="md:hidden mt-4 border-t pt-4 hidden" data-bind="mobileMenu.isOpen">
+                <div class="space-y-2">
+                    <a href="#home" class="block py-2 text-gray-700 hover:text-saffron transition-colors">Home</a>
+                    <a href="#about" class="block py-2 text-gray-700 hover:text-saffron transition-colors">About</a>
+                    <a href="#music" class="block py-2 text-gray-700 hover:text-saffron transition-colors pl-4">Music</a>
+                    <a href="#history" class="block py-2 text-gray-700 hover:text-saffron transition-colors pl-4">History</a>
+                    <a href="#quiz" class="block py-2 text-gray-700 hover:text-saffron transition-colors pl-4">Quiz</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- @END_COMPONENT: Header Navigation -->
+    
+    <!-- @COMPONENT: Hero Section with Flag Animation -->
+    <section id="home" class="gradient-bg py-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold text-navy-blue mb-4 font-hindi">
+                    जय हिन्द!
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-700 mb-8">
+                    Celebrating the spirit of our great nation
+                </p>
+                
+                <!-- 3D Flag Container -->
+                <!-- @FUNCTIONALITY: This should implement 3D flag animation using Three.js with pole rising animation -->
+                <div id="flag-container" class="mb-8 relative mx-auto max-w-md">
+                    <!-- Pole -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-2 bg-gray-600 pole-animation" style="height: 350px; bottom: 0;"></div>
+                    
+                    <!-- Flag -->
+                    <div class="absolute flag-wave" style="left: 50%; top: 20px; transform: translateX(0%);">
+                        <div class="w-32 h-20 shadow-lg">
+                            <div class="h-1/3 bg-saffron"></div>
+                            <div class="h-1/3 bg-white flex items-center justify-center">
+                                <div class="w-4 h-4 border-2 border-navy-blue rounded-full relative">
+                                    <div class="absolute inset-1 border border-navy-blue rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="h-1/3 bg-flag-green"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- National Anthem Button -->
+                <div class="mb-8">
+                    <button class="anthem-button text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg" data-event="click:playAnthem" data-implementation="Should play Jana Gana Mana audio file">
+                        <i class="fas fa-play mr-2"></i>
+                        राष्ट्रगान सुनें (Play National Anthem)
+                    </button>
+                    <!-- @STATE: isPlaying:boolean = false -->
+                    <div class="mt-4 hidden" data-bind="anthem.isPlaying">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 max-w-sm mx-auto">
+                            <p class="text-navy-blue font-medium mb-2">जन गण मन - Jana Gana Mana</p>
+                            <div class="flex items-center space-x-3">
+                                <button class="text-navy-blue hover:text-saffron" data-event="click:togglePlay">
+                                    <i class="fas fa-pause"></i>
+                                </button>
+                                <div class="flex-1 bg-white bg-opacity-30 rounded-full h-2">
+                                    <div class="bg-saffron h-2 rounded-full" style="width: 30%" data-bind="anthem.progress"></div>
+                                </div>
+                                <span class="text-sm text-navy-blue" data-bind="anthem.duration">0:52</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-gray-600 italic">
+                    "Where the world has not been broken up into fragments by narrow domestic walls..."
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section with Flag Animation -->
+    
+    <!-- @COMPONENT: Music Section -->
+    <section id="music" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-navy-blue mb-4 font-hindi">संगीत - Music</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore the rich musical heritage of India through patriotic songs and classical compositions</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: musicItems.map(item => ( -->
+                <div class="bg-gradient-to-br from-saffron to-orange-400 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow" data-mock="true">
+                    <!-- Classical Indian musical instruments and musicians performing -->
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Indian classical music performance" class="w-full h-48 object-cover" data-mock-image="true" />
+                    <div class="p-6">
+                        <h4 class="text-white font-semibold text-lg mb-2" data-bind="music.title">Classical Patriotic Songs</h4>
+                        <p class="text-orange-100 text-sm mb-4" data-bind="music.description">Traditional melodies celebrating our nation</p>
+                        <button class="bg-white text-saffron px-4 py-2 rounded-lg font-medium hover:bg-orange-50 transition-colors" data-event="click:playMusic">
+                            <i class="fas fa-play mr-2"></i>Listen
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-flag-green to-green-600 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow" data-mock="true">
+                    <!-- Traditional Indian folk musicians with instruments -->
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Folk musicians with traditional instruments" class="w-full h-48 object-cover" data-mock-image="true" />
+                    <div class="p-6">
+                        <h4 class="text-white font-semibold text-lg mb-2" data-bind="music.title">Folk Traditions</h4>
+                        <p class="text-green-100 text-sm mb-4" data-bind="music.description">Regional songs from across India</p>
+                        <button class="bg-white text-flag-green px-4 py-2 rounded-lg font-medium hover:bg-green-50 transition-colors" data-event="click:playMusic">
+                            <i class="fas fa-play mr-2"></i>Listen
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-navy-blue to-blue-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow" data-mock="true">
+                    <!-- Modern Indian musicians performing patriotic songs -->
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Contemporary musicians performing patriotic music" class="w-full h-48 object-cover" data-mock-image="true" />
+                    <div class="p-6">
+                        <h4 class="text-white font-semibold text-lg mb-2" data-bind="music.title">Modern Patriotic</h4>
+                        <p class="text-blue-100 text-sm mb-4" data-bind="music.description">Contemporary interpretations of national pride</p>
+                        <button class="bg-white text-navy-blue px-4 py-2 rounded-lg font-medium hover:bg-blue-50 transition-colors" data-event="click:playMusic">
+                            <i class="fas fa-play mr-2"></i>Listen
+                        </button>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Music Section -->
+    
+    <!-- @COMPONENT: History Section -->
+    <section id="history" class="py-16 bg-warm-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-navy-blue mb-4 font-hindi">इतिहास - History</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">Journey through the glorious chapters of Indian independence and freedom struggle</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <!-- @MAP: historyEvents.map(event => ( -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-mock="true">
+                        <div class="md:flex">
+                            <div class="md:w-1/3">
+                                <!-- Historical photograph of Indian independence movement -->
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Indian independence movement historical scene" class="w-full h-64 md:h-full object-cover" data-mock-image="true" />
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex items-center mb-4">
+                                    <span class="bg-saffron text-white px-3 py-1 rounded-full text-sm font-medium" data-bind="history.year">1947</span>
+                                    <h4 class="ml-4 text-xl font-semibold text-navy-blue" data-bind="history.title">Independence Day</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4" data-bind="history.description">The historic moment when India gained freedom from British rule, marking the beginning of a new era of self-governance and democracy.</p>
+                                <button class="text-saffron hover:text-orange-600 font-medium" data-event="click:readMore">
+                                    Read More <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-mock="true">
+                        <div class="md:flex">
+                            <div class="md:w-1/3">
+                                <!-- Gandhi and freedom fighters historical photograph -->
+                                <img src="https://images.unsplash.com/photo-1509909756405-be0199881695?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Mahatma Gandhi and freedom fighters" class="w-full h-64 md:h-full object-cover" data-mock-image="true" />
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <div class="flex items-center mb-4">
+                                    <span class="bg-flag-green text-white px-3 py-1 rounded-full text-sm font-medium" data-bind="history.year">1930</span>
+                                    <h4 class="ml-4 text-xl font-semibold text-navy-blue" data-bind="history.title">Salt March</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4" data-bind="history.description">Gandhi's iconic 240-mile march to Dandi to protest the British salt monopoly, becoming a pivotal moment in the independence movement.</p>
+                                <button class="text-saffron hover:text-orange-600 font-medium" data-event="click:readMore">
+                                    Read More <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: History Section -->
+    
+    <!-- @COMPONENT: Quiz Section -->
+    <section id="quiz" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-navy-blue mb-4 font-hindi">प्रश्नोत्तरी - Quiz</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">Test your knowledge about Indian history, culture, and national symbols</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gradient-to-br from-saffron via-white to-flag-green p-8 rounded-xl shadow-lg">
+                    <!-- @STATE: currentQuestion:number = 0, score:number = 0, showResults:boolean = false -->
+                    <div class="bg-white rounded-lg p-6" data-bind="quiz.currentQuestion">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-sm font-medium text-gray-500">Question <span data-bind="quiz.questionNumber">1</span> of <span data-bind="quiz.totalQuestions">10</span></span>
+                            <span class="text-sm font-medium text-saffron">Score: <span data-bind="quiz.score">0</span></span>
+                        </div>
+                        
+                        <h4 class="text-xl font-semibold text-navy-blue mb-6" data-bind="quiz.question">
+                            When did India gain independence from British rule?
+                        </h4>
+                        
+                        <div class="space-y-3">
+                            <!-- @MAP: quiz.options.map(option => ( -->
+                            <button class="w-full text-left p-4 rounded-lg border border-gray-200 hover:border-saffron hover:bg-orange-50 transition-colors" data-event="click:selectAnswer" data-bind="quiz.option" data-mock="true">
+                                A) August 15, 1947
+                            </button>
+                            <button class="w-full text-left p-4 rounded-lg border border-gray-200 hover:border-saffron hover:bg-orange-50 transition-colors" data-event="click:selectAnswer" data-bind="quiz.option" data-mock="true">
+                                B) January 26, 1950
+                            </button>
+                            <button class="w-full text-left p-4 rounded-lg border border-gray-200 hover:border-saffron hover:bg-orange-50 transition-colors" data-event="click:selectAnswer" data-bind="quiz.option" data-mock="true">
+                                C) October 2, 1869
+                            </button>
+                            <button class="w-full text-left p-4 rounded-lg border border-gray-200 hover:border-saffron hover:bg-orange-50 transition-colors" data-event="click:selectAnswer" data-bind="quiz.option" data-mock="true">
+                                D) September 5, 1946
+                            </button>
+                            <!-- @END_MAP )) -->
+                        </div>
+                        
+                        <div class="mt-6 flex justify-between">
+                            <button class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors" data-event="click:previousQuestion" data-implementation="Should navigate to previous question">
+                                <i class="fas fa-arrow-left mr-2"></i>Previous
+                            </button>
+                            <button class="px-6 py-2 bg-saffron text-white rounded-lg hover:bg-orange-600 transition-colors" data-event="click:nextQuestion" data-implementation="Should validate answer and navigate to next question">
+                                Next <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="mt-6">
+                        <div class="bg-gray-200 rounded-full h-2">
+                            <div class="bg-saffron h-2 rounded-full transition-all duration-300" style="width: 10%" data-bind="quiz.progress"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Quiz Section -->
+    
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-16 bg-warm-gray">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-3xl md:text-4xl font-bold text-navy-blue mb-8 font-hindi">हमारे बारे में - About Us</h3>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-left">
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            This platform is dedicated to celebrating the rich heritage, culture, and history of India. Through music, historical content, and interactive quizzes, we aim to foster patriotism and national pride among Indians worldwide.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Our mission is to educate and inspire people about India's glorious past, vibrant present, and promising future while preserving our cultural values and traditions for generations to come.
+                        </p>
+                        <div class="flex items-center space-x-6">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-saffron" data-bind="stats.songs">50+</div>
+                                <div class="text-sm text-gray-600">Patriotic Songs</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-flag-green" data-bind="stats.events">100+</div>
+                                <div class="text-sm text-gray-600">Historical Events</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-navy-blue" data-bind="stats.questions">200+</div>
+                                <div class="text-sm text-gray-600">Quiz Questions</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <!-- Indian cultural symbols and monuments collage -->
+                        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=600" alt="Indian cultural monuments and symbols" class="rounded-lg shadow-lg w-full" data-mock-image="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+    
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-navy-blue text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-saffron to-flag-green rounded-full flex items-center justify-center">
+                            <i class="fas fa-flag text-white text-sm"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-hindi">भारत माता</h4>
+                    </div>
+                    <p class="text-blue-200 text-sm leading-relaxed">
+                        Celebrating the spirit of India through music, history, and culture. Jai Hind!
+                    </p>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4">Quick Links</h5>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-blue-200 hover:text-white transition-colors text-sm">Home</a>
+                        <a href="#music" class="block text-blue-200 hover:text-white transition-colors text-sm">Music</a>
+                        <a href="#history" class="block text-blue-200 hover:text-white transition-colors text-sm">History</a>
+                        <a href="#quiz" class="block text-blue-200 hover:text-white transition-colors text-sm">Quiz</a>
+                        <a href="#about" class="block text-blue-200 hover:text-white transition-colors text-sm">About</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4">Connect</h5>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="text-blue-200 text-sm">
+                        <i class="fas fa-envelope mr-2"></i>
+                        info@bharatmata.in
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center">
+                <p class="text-blue-200 text-sm">
+                    © 2024 Bharat Mata. Made with ❤️ for India. | वंदे मातरम्
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+    
+    <script>
+        (function() {
+            // TODO: Implement Three.js 3D flag animation
+            // TODO: Implement audio player for national anthem
+            // TODO: Implement quiz functionality with state management
+            // TODO: Implement mobile menu toggle functionality
+            // TODO: Implement smooth scrolling for navigation links
+            
+            // Simple navigation scroll behavior
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Mobile menu toggle placeholder
+            const mobileMenuButton = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            const mobileMenu = document.querySelector('[data-bind="mobileMenu.isOpen"]');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Anthem button interaction placeholder
+            const anthemButton = document.querySelector('[data-event="click:playAnthem"]');
+            const anthemPlayer = document.querySelector('[data-bind="anthem.isPlaying"]');
+            
+            if (anthemButton && anthemPlayer) {
+                anthemButton.addEventListener('click', function() {
+                    anthemPlayer.classList.toggle('hidden');
+                    // TODO: Implement actual audio playback
+                    console.log('Playing National Anthem - Jana Gana Mana');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

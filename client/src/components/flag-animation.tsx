@@ -75,7 +75,7 @@ export default function FlagAnimation() {
             <div className="h-1/3 bg-white relative flex items-center justify-center" style={{
               boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.05), inset 0 -2px 4px rgba(0,0,0,0.05)'
             }}>
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-50/50 via-white to-gray-50/50"></div>
+               <div className="absolute inset-0 bg-gradient-to-r from-gray-50/50 via-white to-gray-50/50"></div>
               
               {/* Perfect Ashoka Chakra */}
               <div className="w-8 h-8 relative z-10">
