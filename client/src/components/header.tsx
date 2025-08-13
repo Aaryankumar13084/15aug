@@ -7,7 +7,6 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    // First navigate to home page if not already there
     if (window.location.pathname !== "/") {
       window.location.href = `/#${sectionId}`;
       return;
@@ -24,7 +23,6 @@ export default function Header() {
     if (window.location.pathname !== "/") {
       window.location.href = "/";
     } else {
-      // If already on home page, scroll to top
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
     setMobileMenuOpen(false);
@@ -34,7 +32,6 @@ export default function Header() {
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo Section */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-saffron to-flag-green rounded-full flex items-center justify-center">
               <Flag className="text-white h-5 w-5" />
@@ -47,7 +44,6 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
             <button
               onClick={navigateHome}
@@ -86,7 +82,6 @@ export default function Header() {
             </Link>
           </div>
           
-          {/* Medium Screen Navigation (Tablet) */}
           <div className="hidden md:flex lg:hidden items-center space-x-4">
             <button
               onClick={navigateHome}
@@ -125,7 +120,6 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="sm"
@@ -136,26 +130,11 @@ export default function Header() {
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
             ) : (
- <>           <button
-              onClick={navigateHome}
-              className="text-gray-700 hover:text-saffron transition-colors font-medium text-sm px-2 py-1 rounded hover:bg-saffron/10"
-              data-testid="nav-home-tablet"
-            >
-              Home
-            </button>
-            <Link
-              href="/about"
-              className="text-gray-700 hover:text-saffron transition-colors font-medium text-sm px-2 py-1 rounded hover:bg-saffron/10"
-              data-testid="nav-about-tablet"
-            >
-              About
-            </Link>
               <Menu className="h-6 w-6" />
             )}
           </Button>
-        </div> </>
+        </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 border-t pt-4 bg-white rounded-lg shadow-lg">
             <div className="space-y-1 px-2 pb-3">
@@ -184,8 +163,14 @@ export default function Header() {
               </Link>
               <Link
                 href="/history"
-                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 trclassName="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
-       href="/quiz"
+                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
+                data-testid="mobile-nav-history"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                📚 History
+              </Link>
+              <Link
+                href="/quiz"
                 className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
                 data-testid="mobile-nav-quiz"
                 onClick={() => setMobileMenuOpen(false)}
@@ -193,11 +178,9 @@ export default function Header() {
                 ❓ Quiz
               </Link>
             </div>
-           </div>
+          </div>
         )}
       </nav>
     </header>
   );
 }
-
-
