@@ -13,36 +13,60 @@ const musicItems = [
     isNationalAnthem: true
   },
   {
-    title: "देश भक्ति गीत - Patriotic Song 1",
-    description: "Inspiring patriotic melody celebrating our motherland (1:05)",
+    title: "वन्दे मातरम् - Vande Mataram",
+    description: "The inspiring national song that ignited India's freedom movement",
     image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     bgColor: "from-flag-green to-green-600",
     textColor: "text-green-100",
-    audioSrc: "/api/audio/patriotic-song-1.mp3"
+    audioSrc: "/api/audio/vande-mataram.mp3"
   },
   {
-    title: "राष्ट्रीय गान - Patriotic Song 2",
-    description: "Extended patriotic composition for the nation (7:10)",
+    title: "सारे जहां से अच्छा - Saare Jahan Se Achha",
+    description: "The beloved patriotic song penned by Allama Iqbal",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     bgColor: "from-navy-blue to-blue-800",
     textColor: "text-blue-100",
-    audioSrc: "/api/audio/patriotic-song-2.mp3"
+    audioSrc: "/api/audio/saare-jahan-se-achha.mp3"
   },
   {
-    title: "स्वतंत्रता गीत - Freedom Song",
-    description: "Melodious tribute to India's independence (6:02)",
+    title: "ऐ मेरे वतन के लोगों - Ae Mere Watan Ke Logon",
+    description: "Lata Mangeshkar's tribute to martyred soldiers of 1962 war",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     bgColor: "from-purple-600 to-indigo-700",
     textColor: "text-purple-100",
-    audioSrc: "/api/audio/patriotic-song-3.mp3"
+    audioSrc: "/api/audio/ae-mere-watan-ke-logon.mp3"
   },
   {
-    title: "भारत माता - Bharat Mata",
-    description: "Beautiful homage to Mother India (3:57)",
+    title: "झंडा ऊंचा रहे हमारा - Jhanda Uncha Rahe Hamara",
+    description: "Patriotic anthem celebrating the Indian tricolor flag",
     image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     bgColor: "from-red-600 to-pink-700",
     textColor: "text-red-100",
-    audioSrc: "/api/audio/patriotic-song-4.mp3"
+    audioSrc: "/api/audio/jhanda-uncha-rahe.mp3"
+  },
+  {
+    title: "कदम कदम बढ़ाये जा - Kadam Kadam Badhaye Ja",
+    description: "Motivational marching song of the Indian National Army",
+    image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    bgColor: "from-yellow-600 to-amber-700",
+    textColor: "text-yellow-100",
+    audioSrc: "/api/audio/kadam-kadam-badhaye-ja.mp3"
+  },
+  {
+    title: "देश रंगीला - Desh Rangila",
+    description: "Celebrating the colorful and vibrant spirit of India",
+    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    bgColor: "from-teal-600 to-cyan-700",
+    textColor: "text-teal-100",
+    audioSrc: "/api/audio/desh-rangila.mp3"
+  },
+  {
+    title: "मिले सुर मेरा तुम्हारा - Mile Sur Mera Tumhara",
+    description: "Unity in diversity - the iconic harmony of Indian culture",
+    image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    bgColor: "from-rose-600 to-red-700",
+    textColor: "text-rose-100",
+    audioSrc: "/api/audio/mile-sur-mera-tumhara.mp3"
   }
 ];
 
