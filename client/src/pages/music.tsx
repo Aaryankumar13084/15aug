@@ -10,7 +10,7 @@ export default function Music() {
       <div className="bg-white shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-4">
-            <Link 
+            <Link
               href="/"
               className="flex items-center gap-2 text-navy-blue hover:text-saffron transition-colors"
               data-testid="back-to-home"
@@ -20,9 +20,25 @@ export default function Music() {
             </Link>
             <div className="flex-1 text-center">
               <h1 className="text-3xl font-bold text-navy-blue font-hindi flex items-center justify-center gap-2">
-                <span className="text-2xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
-                <span>🎵 भारतीय संगीत 🎵</span>
-                <span className="text-2xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
+                <span
+                  className="text-2xl"
+                  style={{
+                    fontFamily:
+                      "Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif",
+                  }}
+                >
+                  🇮🇳
+                </span>
+                <span> भारतीय संगीत</span>
+                <span
+                  className="text-2xl"
+                  style={{
+                    fontFamily:
+                      "Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif",
+                  }}
+                >
+                  🇮🇳
+                </span>
               </h1>
               <p className="text-gray-600 mt-1">Patriotic Songs Collection</p>
             </div>
@@ -34,8 +50,6 @@ export default function Music() {
       <div className="py-8">
         <MusicSection />
       </div>
-
-      <Footer />
     </div>
   );
 }

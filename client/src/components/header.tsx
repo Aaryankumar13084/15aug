@@ -70,7 +70,7 @@ export default function Header() {
                   🎵 Music
                 </DropdownMenuItem>
                 <DropdownMenuItem 
-                  onClick={() => scrollToSection("history")}
+                  onClick={() => window.location.href = "/history"}
                   data-testid="menu-history"
                 >
                   📚 History
@@ -122,12 +122,14 @@ export default function Header() {
               >
                 Music
               </Link>
-              <button 
-                onClick={() => scrollToSection("history")}
+              <Link 
+                href="/history"
                 className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors pl-4"
+                data-testid="mobile-nav-history"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 History
-              </button>
+              </Link>
               <button 
                 onClick={() => scrollToSection("quiz")}
                 className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors pl-4"
