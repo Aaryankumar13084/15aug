@@ -6,7 +6,7 @@ const musicItems = [
   {
     title: "जन गण मन - Jana Gana Mana",
     description: "National Anthem of India with HD audio and lyrics",
-    image: "https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx3uqEcwftiz6j0hcEmsLMuPWy7NaWfrJWeCPE6a0Fcw&s",
     bgColor: "from-saffron to-orange-400",
     textColor: "text-orange-100",
     audioSrc: "/api/audio/jana-gana-mana.mp3",
