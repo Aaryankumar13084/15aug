@@ -46,11 +46,12 @@ export default function Home() {
               <Button 
                 onClick={togglePlay}
                 disabled={isLoading}
-                className="anthem-button text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:bg-gradient-to-r hover:from-saffron hover:to-flag-green"
+                className="anthem-button text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-semibold text-sm sm:text-base md:text-lg shadow-lg hover:bg-gradient-to-r hover:from-saffron hover:to-flag-green"
                 data-testid="button-national-anthem"
               >
-                {isPlaying ? <Pause className="mr-2 h-5 w-5" /> : <Play className="mr-2 h-5 w-5" />}
-                राष्ट्रगान सुनें (Play National Anthem)
+                {isPlaying ? <Pause className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" /> : <Play className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />}
+                <span className="hidden sm:inline">राष्ट्रगान सुनें (Play National Anthem)</span>
+                <span className="sm:hidden">राष्ट्रगान सुनें</span>
               </Button>
               
               {isPlaying && (
