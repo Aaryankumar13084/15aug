@@ -9,18 +9,21 @@ export default function Home() {
   const { isPlaying, isLoading, progress, duration, togglePlay } = useAudioPlayer("/api/audio/jana-gana-mana.mp3");
 
   return (
-    <div className="bg-warm-gray font-sans">
+    <div className="bg-warm-gray font-sans patriotic-bg">
       <Header />
       
       {/* Hero Section with Flag Animation */}
-      <section id="home" className="gradient-bg py-16">
+      <section id="home" className="gradient-bg py-16 desh-bhakti-shadow">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-navy-blue mb-4 font-hindi">
-              जय हिन्द!
+              🇮🇳 जय हिन्द! 🇮🇳
             </h2>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8">
-              Celebrating the spirit of our great nation
+            <p className="text-xl md:text-2xl text-saffron font-semibold mb-4">
+              भारत माता की जय - Celebrating the spirit of our great nation
+            </p>
+            <p className="text-lg text-gray-700 mb-8 italic">
+              "वन्दे मातरम् - वतन की मिट्टी से प्यार"
             </p>
             
             {/* Animated Indian Flag Video */}

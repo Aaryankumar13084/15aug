@@ -116,6 +116,36 @@
   background: linear-gradient(135deg, var(--saffron) 0%, hsl(0 0% 100%) 33%, hsl(0 0% 100%) 66%, var(--flag-green) 100%);
 }
 
+/* Enhanced Patriotic Theme */
+.patriotic-bg {
+  background: linear-gradient(45deg, 
+    var(--saffron) 0%, 
+    rgba(255, 255, 255, 0.9) 25%, 
+    rgba(255, 255, 255, 1) 50%, 
+    rgba(255, 255, 255, 0.9) 75%, 
+    var(--flag-green) 100%);
+}
+
+.patriotic-border {
+  border-image: linear-gradient(90deg, var(--saffron), white, var(--flag-green)) 1;
+}
+
+.desh-bhakti-shadow {
+  box-shadow: 0 4px 6px -1px rgba(255, 102, 0, 0.1), 
+              0 2px 4px -1px rgba(19, 136, 8, 0.1);
+}
+
+.anthem-button {
+  background: linear-gradient(135deg, var(--saffron) 0%, var(--flag-green) 100%);
+  border: 2px solid var(--navy-blue);
+  transition: all 0.3s ease;
+}
+
+.anthem-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 102, 0, 0.3);
+}
+
 .flag-wave-3d {
   animation: flag3DWave 3s ease-in-out infinite, flagSway 4s ease-in-out infinite;
   transform-origin: left center;
