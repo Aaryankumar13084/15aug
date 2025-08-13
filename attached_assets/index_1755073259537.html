@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>15 अगस्त क्विज़</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.5s ease-out both;
+      }
+
+      body::before {
+        content: "";
+        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Ashoka_Chakra.svg/1200px-Ashoka_Chakra.svg.png') no-repeat center center;
+        background-size: 200px;
+        opacity: 0.05;
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-orange-500 via-white to-green-500 min-h-screen flex items-center justify-center font-sans relative z-10"
+  >
+    <!-- Main Content -->
+    <div class="relative z-10 w-full max-w-3xl p-6">
+      <!-- Intro / Welcome -->
+      <div
+        id="intro"
+        class="bg-white w-full p-8 rounded-3xl shadow-2xl text-center animate-fadeInUp"
+      >
+        <h1 class="text-5xl font-extrabold text-orange-600 mb-4">
+          🇮🇳 15 अगस्त क्विज़
+        </h1>
+        <div
+          class="inline-block bg-gradient-to-r from-orange-500 to-green-600 text-white text-lg px-4 py-1 rounded-full mb-6"
+        >
+          Max 20 Points
+        </div>
+        <p class="text-gray-800 leading-relaxed mb-6">
+          ⚡इस क्विज़ में <strong>स्वतंत्रता दिवस</strong> से जुड़े
+          <strong>20 प्रश्न</strong> होंगे।<br />
+          ⚡हर प्रश्न के लिए मिलेगा <strong>15 सेकंड</strong> और हर सही उत्तर पर
+          मिलेगा <span class="text-green-700 font-bold">+1 पॉइंट</span>।<br />
+          ⚡गलत उत्तर पर कोई पॉइंट नहीं मिलेगा।<br />
+          ⚡अंत में आपका स्कोर <span id="prize">0</span> दिखाई देगा! 🎉
+        </p>
+        <button
+          onclick="startQuiz()"
+          class="mt-4 bg-green-600 hover:bg-green-700 text-white text-xl font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 active:scale-95 transition"
+        >
+          🚀 Start Quiz
+        </button>
+      </div>
+
+      <!-- Quiz Page with Indian Theme -->
+      <div
+        id="quiz-container"
+        class="hidden bg-gradient-to-br from-orange-100 via-white to-green-100 w-full p-8 rounded-3xl shadow-2xl space-y-6 border-4 border-orange-500 animate-fadeInUp"
+      >
+        <!-- Indian Theme Header -->
+        <div class="text-center text-xl font-bold text-blue-800">
+          🇮🇳 जय हिन्द! – स्वतंत्रता दिवस क्विज़
+        </div>
+
+        <div class="flex justify-between items-center">
+          <div class="text-lg font-semibold text-orange-700">
+            Question <span id="q-number">1</span>/20
+          </div>
+          <div
+            class="text-lg font-semibold text-green-600 bg-green-100 px-4 py-1 rounded-full"
+          >
+            ⏰ <span id="timer">15</span>s
+          </div>
+        </div>
+
+        <div
+          id="question-text"
+          class="text-2xl font-bold text-gray-800 min-h-[4.5rem]"
+        ></div>
+
+        <div id="options" class="grid grid-cols-1 gap-5"></div>
+
+        <button
+          id="next-btn"
+          disabled
+          class="w-full bg-orange-600 hover:bg-orange-700 text-white text-lg font-semibold py-3 rounded-xl shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition"
+        >
+          Next
+        </button>
+
+        <div
+          id="result"
+          class="text-center text-3xl font-extrabold text-orange-800 mt-6"
+        ></div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      const questions = [
+        {
+          q: "भारत में स्वतंत्रता दिवस कब मनाया जाता है?",
+          opts: ["15 अगस्त", "26 जनवरी", "2 अक्टूबर", "14 अगस्त"],
+          ans: 0,
+        },
+        {
+          q: "भारत को आज़ादी किस वर्ष मिली थी?",
+          opts: ["1945", "1946", "1947", "1950"],
+          ans: 2,
+        },
+        {
+          q: "भारत के पहले प्रधानमंत्री कौन थे?",
+          opts: ["महात्मा गांधी", "सुभाष चंद्र बोस", "लाल बहादुर शास्त्री", "जवाहरलाल नेहरू"],
+          ans: 3,
+        },
+        {
+          q: "भारत की स्वतंत्रता की घोषणा किसने की थी?",
+          opts: ["ब्रिटिश संसद", "कांग्रेस", "नेहरू", "माउंटबेटन"],
+          ans: 0,
+        },
+        {
+          q: "स्वतंत्रता की पहली घड़ी में किसने ‘Tryst with Destiny’ भाषण दिया?",
+          opts: ["गांधी जी", "नेहरू", "पटेल", "राजेंद्र प्रसाद"],
+          ans: 1,
+        },
+        {
+          q: "भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ था?",
+          opts: ["1940", "1941", "1942", "1943"],
+          ans: 2,
+        },
+        {
+          q: "15 अगस्त को भारत के किस स्थान पर झंडा फहराया जाता है?",
+          opts: ["राजघाट", "इंडिया गेट", "लाल किला", "राष्ट्रपति भवन"],
+          ans: 2,
+        },
+        {
+          q: "महात्मा गांधी का पूरा नाम क्या था?",
+          opts: ["मोहनलाल गांधी", "मोहनदास करमचंद गांधी", "महेंद्र गांधी", "महेन्द्रनाथ गांधी"],
+          ans: 1,
+        },
+        {
+          q: "भारत का राष्ट्रीय ध्वज किसने डिज़ाइन किया था?",
+          opts: ["रविंद्रनाथ टैगोर", "सरोजिनी नायडू", "पिंगली वेंकैय्या", "सुभाष बोस"],
+          ans: 2,
+        },
+        {
+          q: "15 अगस्त 1947 को भारत के वायसराय कौन थे?",
+          opts: ["लॉर्ड डलहौजी", "लॉर्ड कर्जन", "लॉर्ड माउंटबेटन", "लॉर्ड वेलेजली"],
+          ans: 2,
+        },
+        {
+          q: "भारतीय संविधान कब लागू हुआ?",
+          opts: ["15 अगस्त 1947", "26 जनवरी 1950", "2 अक्टूबर 1949", "14 नवंबर 1948"],
+          ans: 1,
+        },
+        {
+          q: "भारत के पहले राष्ट्रपति कौन थे?",
+          opts: ["नेहरू", "राजेंद्र प्रसाद", "जाकिर हुसैन", "सर्वपल्ली राधाकृष्णन"],
+          ans: 1,
+        },
+        {
+          q: "‘जन गण मन’ किसने लिखा?",
+          opts: ["महात्मा गांधी", "रवींद्रनाथ टैगोर", "बंकिम चंद्र", "नेहरू"],
+          ans: 1,
+        },
+        {
+          q: "‘वन्दे मातरम्’ किसने लिखा?",
+          opts: ["रवींद्रनाथ टैगोर", "बंकिम चंद्र चट्टोपाध्याय", "नेहरू", "सुभाष बोस"],
+          ans: 1,
+        },
+        {
+          q: "भारत का राष्ट्रीय गान कब अपनाया गया?",
+          opts: ["1947", "1948", "1950", "1952"],
+          ans: 2,
+        },
+        {
+          q: "भारत की स्वतंत्रता में 'लाल, बाल, पाल' किसे कहते हैं?",
+          opts: ["तीन ब्रिटिश गवर्नर", "तीन कवि", "तीन स्वतंत्रता सेनानी", "तीन लेखक"],
+          ans: 2,
+        },
+        {
+          q: "भारत विभाजन के समय पाकिस्तान के पहले गवर्नर जनरल कौन बने?",
+          opts: ["जिन्ना", "लियाकत अली", "नेहरू", "सरदार पटेल"],
+          ans: 0,
+        },
+        {
+          q: "भारत के पहले उप-प्रधानमंत्री कौन थे?",
+          opts: ["पटेल", "गांधी", "राजगोपालाचारी", "नेहरू"],
+          ans: 0,
+        },
+        {
+          q: "भारत छोड़ो आंदोलन का नारा क्या था?",
+          opts: ["भारत जाओ", "ब्रिटिश हटाओ", "भारत छोड़ो", "इंकलाब ज़िंदाबाद"],
+          ans: 2,
+        },
+        {
+          q: "15 अगस्त को किस देश ने भी भारत के साथ स्वतंत्रता प्राप्त की?",
+          opts: ["बांग्लादेश", "पाकिस्तान", "नेपाल", "भूटान"],
+          ans: 1,
+        }
+      ];
+
+      const intro = document.getElementById("intro");
+      const quiz = document.getElementById("quiz-container");
+      const prizeSpan = document.getElementById("prize");
+      let current = 0, score = 0, timerId;
+      const timeLimit = 15;
+      const qNumEl = document.getElementById("q-number");
+      const qTextEl = document.getElementById("question-text");
+      const optsEl = document.getElementById("options");
+      const timerEl = document.getElementById("timer");
+      const nextBtn = document.getElementById("next-btn");
+      const resultEl = document.getElementById("result");
+
+      prizeSpan.textContent = questions.length;
+
+      function startQuiz() {
+        intro.classList.add("hidden");
+        quiz.classList.remove("hidden");
+        loadQuestion();
+      }
+
+      function loadQuestion() {
+        clearInterval(timerId);
+        resultEl.textContent = "";
+        nextBtn.disabled = true;
+        const q = questions[current];
+        qNumEl.textContent = current + 1;
+        qTextEl.textContent = q.q;
+        optsEl.innerHTML = "";
+
+        q.opts.forEach((opt, i) => {
+          const btn = document.createElement("button");
+          btn.textContent = opt;
+          btn.className =
+            "option-btn w-full px-5 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold transition hover:bg-orange-100";
+          btn.onclick = () => selectAnswer(i);
+          optsEl.appendChild(btn);
+        });
+
+        let t = timeLimit;
+        timerEl.textContent = t;
+        timerId = setInterval(() => {
+          t--;
+          timerEl.textContent = t;
+          if (t <= 0) {
+            clearInterval(timerId);
+            showCorrect();
+          }
+        }, 1000);
+      }
+
+      function selectAnswer(idx) {
+        clearInterval(timerId);
+        const corr = questions[current].ans;
+        document.querySelectorAll(".option-btn").forEach((btn, i) => {
+          btn.disabled = true;
+          btn.classList.remove("hover:bg-orange-100");
+          if (i === corr) btn.classList.add("bg-green-500", "text-white");
+          if (i === idx && i !== corr)
+            btn.classList.add("bg-red-500", "text-white");
+        });
+        if (idx === corr) score++;
+        nextBtn.disabled = false;
+      }
+
+      function showCorrect() {
+        const corr = questions[current].ans;
+        document.querySelectorAll(".option-btn").forEach((btn, i) => {
+          btn.disabled = true;
+          btn.classList.remove("hover:bg-orange-100");
+          if (i === corr) btn.classList.add("bg-green-500", "text-white");
+        });
+        nextBtn.disabled = false;
+      }
+
+      nextBtn.onclick = () => {
+        current++;
+        if (current < questions.length) loadQuestion();
+        else endQuiz();
+      };
+
+      function endQuiz() {
+        quiz.innerHTML = `
+          <div class="text-center animate-fadeInUp p-8">
+            <h2 class="text-4xl font-extrabold mb-4 text-orange-700">🎉 Quiz Complete!</h2>
+            <p class="text-3xl text-gray-800 mb-6">आपका स्कोर ${score} / ${questions.length}</p>
+            <button onclick="location.reload()"
+              class="bg-green-600 hover:bg-green-700 text-white py-3 px-8 rounded-full text-xl shadow-lg active:scale-95 transition">
+              Restart Quiz
+            </button>
+          </div>`;
+      }
+    </script>
+  </body>
+</html>

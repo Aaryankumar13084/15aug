@@ -30,32 +30,34 @@ export default function Header() {
               <Flag className="text-white h-5 w-5" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-navy-blue font-hindi">भारत माता</h1>
+              <h1 className="text-xl font-bold text-navy-blue font-hindi">
+                भारत माता
+              </h1>
               <p className="text-xs text-gray-600">Patriotic India</p>
             </div>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button 
+            <button
               onClick={() => scrollToSection("home")}
               className="text-gray-700 hover:text-saffron transition-colors font-medium"
             >
               Home
             </button>
-            <Link 
+            <Link
               href="/about"
-              className="text-gray-700 hover:text-saffron transition-colors font-medium"
+              className="text-black-700 hover:text-saffron transition-colors font-medium"
               data-testid="nav-about"
             >
               About
             </Link>
-            
+
             {/* Menu Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   className="text-gray-700 hover:text-saffron font-medium"
                   data-testid="button-menu-dropdown"
                 >
@@ -63,19 +65,19 @@ export default function Header() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem 
-                  onClick={() => window.location.href = "/music"}
+                <DropdownMenuItem
+                  onClick={() => (window.location.href = "/music")}
                   data-testid="menu-music"
                 >
                   🎵 Music
                 </DropdownMenuItem>
-                <DropdownMenuItem 
-                  onClick={() => window.location.href = "/history"}
+                <DropdownMenuItem
+                  onClick={() => (window.location.href = "/history")}
                   data-testid="menu-history"
                 >
                   📚 History
                 </DropdownMenuItem>
-                <DropdownMenuItem 
+                <DropdownMenuItem
                   onClick={() => scrollToSection("quiz")}
                   data-testid="menu-quiz"
                 >
@@ -84,29 +86,33 @@ export default function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          
+
           {/* Mobile Menu Button */}
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             size="sm"
             className="md:hidden text-gray-700 hover:text-saffron"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </div>
-        
+
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 border-t pt-4">
             <div className="space-y-2">
-              <button 
+              <button
                 onClick={() => scrollToSection("home")}
                 className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
               >
                 Home
               </button>
-              <Link 
+              <Link
                 href="/about"
                 className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
                 data-testid="mobile-nav-about"
@@ -114,7 +120,7 @@ export default function Header() {
               >
                 About
               </Link>
-              <Link 
+              <Link
                 href="/music"
                 className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
                 data-testid="mobile-nav-music"
@@ -122,7 +128,7 @@ export default function Header() {
               >
                 🎵 Music
               </Link>
-              <Link 
+              <Link
                 href="/history"
                 className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
                 data-testid="mobile-nav-history"
@@ -130,7 +136,7 @@ export default function Header() {
               >
                 📚 History
               </Link>
-              <button 
+              <button
                 onClick={() => scrollToSection("quiz")}
                 className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
               >
