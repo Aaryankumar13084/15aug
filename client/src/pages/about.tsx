@@ -55,8 +55,12 @@ export default function About() {
                 ☸
               </div>
               
-              <h2 className="text-3xl font-bold text-center text-navy-blue mb-8 font-hindi">
-                🇮🇳 🇮🇳 Lavish 🇮🇳 🇮🇳
+              <h2 className="text-3xl font-bold text-center text-navy-blue mb-8 font-hindi flex items-center justify-center gap-2">
+                <span className="text-3xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
+                <span className="text-3xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
+                <span>Lavish</span>
+                <span className="text-3xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
+                <span className="text-3xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
               </h2>
               
               <div className="space-y-6 text-lg leading-relaxed text-gray-800">
@@ -90,8 +94,12 @@ export default function About() {
                 ☸
               </div>
               
-              <h2 className="text-3xl font-bold text-center text-navy-blue mb-8 font-hindi">
-                🇮🇳 🇮🇳 Himanshu 🇮🇳 🇮🇳
+              <h2 className="text-3xl font-bold text-center text-navy-blue mb-8 font-hindi flex items-center justify-center gap-2">
+                <span className="text-3xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
+                <span className="text-3xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
+                <span>Himanshu</span>
+                <span className="text-3xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
+                <span className="text-3xl" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>🇮🇳</span>
               </h2>
               
               <div className="space-y-6 text-lg leading-relaxed text-gray-800">
