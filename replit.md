@@ -21,11 +21,12 @@ This is a patriotic Indian cultural platform called "भारत माता" 
   - Added responsive navigation for large, medium, and mobile screens
   - Enhanced mobile menu with icons and improved styling
   - Removed dropdown menu for cleaner, more accessible navigation
-- **HOME PAGE VIDEO UPGRADE**: Replaced national anthem audio with animated Indian flag
+- **HOME PAGE VIDEO UPGRADE**: Enhanced home page with animated Indian flag and national anthem
   - Added beautiful looping Indian flag animation GIF to center of home page
   - Positioned video prominently in hero section with shadow and rounded styling
-  - Removed audio player controls for cleaner visual focus
-  - Enhanced patriotic visual experience with authentic flag animation
+  - Re-added national anthem button below flag animation for audio playback
+  - Combined visual flag animation with audio controls for complete patriotic experience
+  - Enhanced user experience with both visual and audio patriotic elements
 - **HISTORY PAGE ENHANCEMENT**: Added authentic images for all freedom fighters
   - Integrated real historical photos for Gandhi, Bhagat Singh, Azad, Bose, Patel, Rani Lakshmibai, etc.
   - Implemented fallback system with icons if images fail to load
