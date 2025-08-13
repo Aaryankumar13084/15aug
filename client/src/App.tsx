@@ -8,6 +8,7 @@ import About from "@/pages/about";
 import Music from "@/pages/music";
 import History from "@/pages/history";
 import NotFound from "@/pages/not-found";
+import QuizSection from "./components/quiz-section";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/music" component={Music} />
       <Route path="/history" component={History} />
+      <Route path="/quiz" component={QuizSection} />
       <Route component={NotFound} />
     </Switch>
   );

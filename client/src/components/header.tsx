@@ -14,11 +14,11 @@ export default function Header() {
 
   const scrollToSection = (sectionId: string) => {
     // First navigate to home page if not already there
-    if (window.location.pathname !== '/') {
+    if (window.location.pathname !== "/") {
       window.location.href = `/#${sectionId}`;
       return;
     }
-    
+
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -27,11 +27,11 @@ export default function Header() {
   };
 
   const navigateHome = () => {
-    if (window.location.pathname !== '/') {
-      window.location.href = '/';
+    if (window.location.pathname !== "/") {
+      window.location.href = "/";
     } else {
       // If already on home page, scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
     setMobileMenuOpen(false);
   };
@@ -91,13 +91,13 @@ export default function Header() {
                   onClick={() => (window.location.href = "/history")}
                   data-testid="menu-history"
                 >
-                  📚 History
+                quiz
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  onClick={() => scrollToSection("quiz")}
+                  onClick={() => (window.location.href = "/quiz")}
                   data-testid="menu-quiz"
                 >
-                  ❓ Quiz
+                  📚 History
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
