@@ -75,12 +75,7 @@ export default function Home() {
       
 
 
-      {/* Quiz Section */}
-      <QuizSection />
       
-
-      {/* Footer */}
-      <Footer />
 
     </div>
   );

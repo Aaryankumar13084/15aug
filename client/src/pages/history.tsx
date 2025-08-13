@@ -246,7 +246,7 @@ export default function History() {
         </div>
       </div>
 
-      <Footer />
+ 
     </div>
   );
 }

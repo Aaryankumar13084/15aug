@@ -37,20 +37,6 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection("home")}
-              className="text-gray-700 hover:text-saffron transition-colors font-medium"
-            >
-              Home
-            </button>
-            <Link 
-              href="/about"
-              className="text-gray-700 hover:text-saffron transition-colors font-medium"
-              data-testid="nav-about"
-            >
-              About
-            </Link>
-            
             {/* Menu Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -100,41 +86,27 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 border-t pt-4">
             <div className="space-y-2">
-              <button 
-                onClick={() => scrollToSection("home")}
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
-              >
-                Home
-              </button>
-              <Link 
-                href="/about"
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
-                data-testid="mobile-nav-about"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </Link>
               <Link 
                 href="/music"
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors pl-4"
+                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
                 data-testid="mobile-nav-music"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Music
+                🎵 Music
               </Link>
               <Link 
                 href="/history"
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors pl-4"
+                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
                 data-testid="mobile-nav-history"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                History
+                📚 History
               </Link>
               <button 
                 onClick={() => scrollToSection("quiz")}
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors pl-4"
+                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
               >
-                Quiz
+                ❓ Quiz
               </button>
             </div>
           </div>
