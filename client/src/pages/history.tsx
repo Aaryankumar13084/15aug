@@ -9,70 +9,80 @@ export default function History() {
       name: "महात्मा गांधी (Mahatma Gandhi)",
       years: "1869-1948",
       description: "राष्ट्रपिता महात्मा गांधी ने अहिंसा और सत्याग्रह के माध्यम से भारत की स्वतंत्रता के लिए संघर्ष किया। उन्होंने दांडी मार्च, असहयोग आंदोलन और भारत छोड़ो आंदोलन का नेतृत्व किया।",
-      englishDesc: "Father of the Nation, led India's independence movement through non-violence and civil disobedience. Famous for Salt March, Non-cooperation Movement, and Quit India Movement."
+      englishDesc: "Father of the Nation, led India's independence movement through non-violence and civil disobedience. Famous for Salt March, Non-cooperation Movement, and Quit India Movement.",
+      icon: "🕊️"
     },
     {
       id: 2,
       name: "भगत सिंह (Bhagat Singh)",
       years: "1907-1931",
       description: "क्रांतिकारी भगत सिंह ने मात्र 23 वर्ष की आयु में देश के लिए अपना जीवन बलिदान कर दिया। उन्होंने राजगुरु और सुखदेव के साथ मिलकर अंग्रेजी शासन के खिलाफ संघर्ष किया।",
-      englishDesc: "Revolutionary who sacrificed his life at age 23 for India's freedom. Along with Rajguru and Sukhdev, he fought against British rule with courage and determination."
+      englishDesc: "Revolutionary who sacrificed his life at age 23 for India's freedom. Along with Rajguru and Sukhdev, he fought against British rule with courage and determination.",
+      icon: "🔥"
     },
     {
       id: 3,
       name: "चंद्रशेखर आज़ाद (Chandrashekhar Azad)",
       years: "1906-1931",
       description: "आज़ाद ने प्रण लिया था कि वे जीवित अंग्रेजों के हाथ नहीं आएंगे। हिंदुस्तान रिपब्लिकन एसोसिएशन के नेता के रूप में उन्होंने कई क्रांतिकारी गतिविधियों का नेतृत्व किया।",
-      englishDesc: "Leader of Hindustan Republican Association who vowed never to be captured alive by the British. Known for his fearless revolutionary activities and ultimate sacrifice."
+      englishDesc: "Leader of Hindustan Republican Association who vowed never to be captured alive by the British. Known for his fearless revolutionary activities and ultimate sacrifice.",
+      icon: "⚔️"
     },
     {
       id: 4,
       name: "सुभाष चंद्र बोस (Subhas Chandra Bose)",
       years: "1897-1945",
       description: "नेताजी सुभाष चंद्र बोस ने आज़ाद हिंद फौज का गठन करके सशस्त्र संघर्ष के माध्यम से स्वतंत्रता प्राप्त करने का प्रयास किया। उनका नारा 'तुम मुझे खून दो, मैं तुम्हें आज़ादी दूंगा' अमर है।",
-      englishDesc: "Netaji formed the Indian National Army (Azad Hind Fauj) and sought freedom through armed struggle. His slogan 'Give me blood, I will give you freedom' is immortal."
+      englishDesc: "Netaji formed the Indian National Army (Azad Hind Fauj) and sought freedom through armed struggle. His slogan 'Give me blood, I will give you freedom' is immortal.",
+      icon: "🪖"
     },
     {
       id: 5,
       name: "सरदार वल्लभभाई पटेल (Sardar Vallabhbhai Patel)",
       years: "1875-1950",
       description: "भारत के लौह पुरुष सरदार पटेल ने 562 रियासतों को भारत में मिलाकर एकीकृत भारत का निर्माण किया। वे स्वतंत्रता संग्राम के महत्वपूर्ण नेता थे।",
-      englishDesc: "Iron Man of India who unified 562 princely states into the Indian Union. A key leader in the independence movement and architect of modern India."
+      englishDesc: "Iron Man of India who unified 562 princely states into the Indian Union. A key leader in the independence movement and architect of modern India.",
+      icon: "🏛️"
     },
     {
       id: 6,
       name: "रानी लक्ष्मीबाई (Rani Lakshmibai)",
       years: "1828-1858",
       description: "झांसी की रानी लक्ष्मीबाई ने 1857 के विद्रोह में अंग्रेजों के खिलाफ वीरतापूर्वक लड़ाई लड़ी। उन्होंने 'मैं अपनी झांसी नहीं दूंगी' का नारा दिया।",
-      englishDesc: "Queen of Jhansi who fought valiantly against the British in the 1857 revolt. Famous for her declaration 'I will never give up my Jhansi.'"
+      englishDesc: "Queen of Jhansi who fought valiantly against the British in the 1857 revolt. Famous for her declaration 'I will never give up my Jhansi.'",
+      icon: "👑"
     },
     {
       id: 7,
       name: "मंगल पांडे (Mangal Pandey)",
       years: "1827-1857",
       description: "मंगल पांडे ने 1857 के स्वतंत्रता संग्राम की शुरुआत की। एक सिपाही के रूप में उन्होंने अंग्रेजी शासन के खिलाफ विद्रोह का बिगुल फूंका।",
-      englishDesc: "Sepoy who sparked the 1857 Indian Rebellion. As a soldier, he was among the first to revolt against British rule, inspiring others to join the freedom struggle."
+      englishDesc: "Sepoy who sparked the 1857 Indian Rebellion. As a soldier, he was among the first to revolt against British rule, inspiring others to join the freedom struggle.",
+      icon: "🎺"
     },
     {
       id: 8,
       name: "अशफाकउल्लाह खान (Ashfaqullah Khan)",
       years: "1900-1927",
       description: "राम प्रसाद बिस्मिल के मित्र अशफाकउल्लाह खान ने काकोरी कांड में भाग लिया। हिंदू-मुस्लिम एकता के प्रतीक थे और देश के लिए शहीद हुए।",
-      englishDesc: "Close friend of Ram Prasad Bismil who participated in the Kakori conspiracy. Symbol of Hindu-Muslim unity and sacrificed his life for the nation."
+      englishDesc: "Close friend of Ram Prasad Bismil who participated in the Kakori conspiracy. Symbol of Hindu-Muslim unity and sacrificed his life for the nation.",
+      icon: "🤝"
     },
     {
       id: 9,
       name: "खुदीराम बोस (Khudiram Bose)",
       years: "1889-1908",
       description: "मात्र 18 वर्ष की आयु में शहीद हुए खुदीराम बोस भारत के सबसे युवा क्रांतिकारियों में से एक थे। उन्होंने निडरता से अंग्रेजी शासन का विरोध किया।",
-      englishDesc: "One of India's youngest revolutionaries who was martyred at just 18 years of age. Fearlessly opposed British rule and inspired many young Indians."
+      englishDesc: "One of India's youngest revolutionaries who was martyred at just 18 years of age. Fearlessly opposed British rule and inspired many young Indians.",
+      icon: "⭐"
     },
     {
       id: 10,
       name: "तात्या टोपे (Tatya Tope)",
       years: "1814-1859",
       description: "1857 के विद्रोह के महान योद्धा तात्या टोपे ने नाना साहब और रानी लक्ष्मीबाई के साथ मिलकर अंग्रेजों के खिलाफ संघर्ष किया। वे कुशल सैन्य रणनीतिकार थे।",
-      englishDesc: "Great warrior of 1857 rebellion who fought alongside Nana Saheb and Rani Lakshmibai against the British. Known for his brilliant military strategies."
+      englishDesc: "Great warrior of 1857 rebellion who fought alongside Nana Saheb and Rani Lakshmibai against the British. Known for his brilliant military strategies.",
+      icon: "🎖️"
     }
   ];
 
@@ -123,8 +133,9 @@ export default function History() {
                   data-testid={`fighter-card-${fighter.id}`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-saffron rounded-full flex items-center justify-center text-white font-bold text-xl">
-                      {fighter.id}
+                    <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-saffron to-orange-600 rounded-full flex flex-col items-center justify-center text-white shadow-lg border-3 border-white">
+                      <div className="text-2xl mb-1" style={{fontFamily: 'Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif'}}>{fighter.icon}</div>
+                      <div className="text-xs font-bold">{fighter.id}</div>
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-navy-blue mb-2 font-hindi">
