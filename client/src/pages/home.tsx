@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 import FlagAnimation from "@/components/flag-animation";
-import MusicSection from "@/components/music-section";
+
 import HistorySection from "@/components/history-section";
 import QuizSection from "@/components/quiz-section";
 
@@ -73,9 +73,7 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Music Section */}
-      <MusicSection />
-      
+
       {/* History Section */}
       <HistorySection />
       
