@@ -31,7 +31,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-gradient-to-r from-saffron/10 via-white to-flag-green/10 shadow-lg sticky top-0 z-50 border-b-2 border-saffron/20">
+    <header className="bg-white shadow-lg sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo Section */}
@@ -41,9 +41,9 @@ export default function Header() {
             </div>
             <div>
               <h1 className="text-xl font-bold text-navy-blue font-hindi">
-                🇮🇳 भारत माता 🇮🇳
+                भारत माता
               </h1>
-              <p className="text-xs text-saffron font-semibold">जय हिन्द - Jai Hind</p>
+              <p className="text-xs text-gray-600">Patriotic India</p>
             </div>
           </div>
 
@@ -141,10 +141,25 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* Mobile Menu - Only Music, History, Quiz */}
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 border-t pt-4 bg-gradient-to-r from-saffron/5 via-white to-flag-green/5 rounded-lg shadow-lg border-saffron/20">
+          <div className="md:hidden mt-4 border-t pt-4 bg-white rounded-lg shadow-lg">
             <div className="space-y-1 px-2 pb-3">
+              <button
+                onClick={navigateHome}
+                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
+                data-testid="mobile-nav-home"
+              >
+                🏠 Home
+              </button>
+              <Link
+                href="/about"
+                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
+                data-testid="mobile-nav-about"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                ℹ️ About
+              </Link>
               <Link
                 href="/music"
                 className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"

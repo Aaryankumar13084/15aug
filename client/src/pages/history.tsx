@@ -117,9 +117,9 @@ export default function History() {
   ];
 
   return (
-    <div className="min-h-screen patriotic-bg desh-bhakti-shadow">
+    <div className="min-h-screen bg-gradient-to-b from-saffron/10 via-white to-flag-green/10">
       {/* Header with Back Button */}
-      <div className="bg-gradient-to-r from-saffron/10 via-white to-flag-green/10 shadow-md sticky top-0 z-50 border-b-2 border-saffron/30">
+      <div className="bg-white shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-4">
             <Link
@@ -152,8 +152,8 @@ export default function History() {
                   🇮🇳
                 </span>
               </h1>
-              <p className="text-saffron font-semibold mt-1">
-                🏛️ महान भारतीय स्वतंत्रता सेनानी - Great Indian Freedom Fighters 🏛️
+              <p className="text-gray-600 mt-1">
+                Great Indian Freedom Fighters
               </p>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function History() {
               {freedomFighters.map((fighter) => (
                 <div
                   key={fighter.id}
-                  className="bg-gradient-to-br from-saffron/10 via-white to-flag-green/10 rounded-lg p-6 desh-bhakti-shadow border-2 border-saffron/30 hover:border-flag-green/50 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="bg-gradient-to-br from-orange-50 via-white to-green-50 rounded-lg p-6 shadow-lg border-2 border-flag-green/20 hover:shadow-xl transition-shadow"
                   data-testid={`fighter-card-${fighter.id}`}
                 >
                   <div className="flex items-start gap-4">

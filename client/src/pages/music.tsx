@@ -5,9 +5,9 @@ import Footer from "@/components/footer";
 
 export default function Music() {
   return (
-    <div className="min-h-screen patriotic-bg desh-bhakti-shadow">
+    <div className="min-h-screen bg-gradient-to-b from-saffron/10 via-white to-flag-green/10">
       {/* Header with Back Button */}
-      <div className="bg-gradient-to-r from-saffron/10 via-white to-flag-green/10 shadow-md sticky top-0 z-50 border-b-2 border-saffron/30">
+      <div className="bg-white shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-4">
             <Link
@@ -40,7 +40,7 @@ export default function Music() {
                   🇮🇳
                 </span>
               </h1>
-              <p className="text-saffron font-semibold mt-1">🎵 देशभक्ति गीत संग्रह - Patriotic Songs Collection 🎵</p>
+              <p className="text-gray-600 mt-1">Patriotic Songs Collection</p>
             </div>
           </div>
         </div>

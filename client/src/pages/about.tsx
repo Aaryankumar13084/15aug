@@ -3,20 +3,17 @@ import Footer from "@/components/footer";
 
 export default function About() {
   return (
-    <div className="bg-warm-gray font-sans min-h-screen patriotic-bg">
+    <div className="bg-warm-gray font-sans min-h-screen">
       <Header />
 
       {/* About Hero Section */}
-      <section className="gradient-bg py-16 desh-bhakti-shadow">
+      <section className="gradient-bg py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-navy-blue mb-4 font-hindi">
-            🇮🇳 हमारे बारे में 🇮🇳
+            हमारे बारे में
           </h1>
-          <p className="text-xl md:text-2xl text-saffron font-semibold mb-4">
-            देश भक्त डेवलपर्स - Patriotic Developers
-          </p>
-          <p className="text-lg text-gray-700">
-            "सरफरोशी की तमन्ना अब हमारे दिल में है"
+          <p className="text-xl md:text-2xl text-gray-700 mb-8">
+            About the Developers
           </p>
         </div>
       </section>
