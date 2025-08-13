@@ -18,7 +18,7 @@ const musicItems = [
     image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     bgColor: "from-flag-green to-green-600",
     textColor: "text-green-100",
-    audioSrc: "/api/audio/vande-mataram.mp3"
+    audioSrc: "/api/audio/vande.mp3"
   },
   {
     title: "सारे जहां से अच्छा - Saare Jahan Se Achha",
@@ -26,7 +26,7 @@ const musicItems = [
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     bgColor: "from-navy-blue to-blue-800",
     textColor: "text-blue-100",
-    audioSrc: "/api/audio/saare-jahan-se-achha.mp3"
+    audioSrc: "/api/audio/sare.mp3"
   },
   {
     title: "ऐ मेरे वतन के लोगों - Ae Mere Watan Ke Logon",
@@ -34,40 +34,9 @@ const musicItems = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     bgColor: "from-purple-600 to-indigo-700",
     textColor: "text-purple-100",
-    audioSrc: "/api/audio/ae-mere-watan-ke-logon.mp3"
-  },
-  {
-    title: "झंडा ऊंचा रहे हमारा - Jhanda Uncha Rahe Hamara",
-    description: "Patriotic anthem celebrating the Indian tricolor flag",
-    image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    bgColor: "from-red-600 to-pink-700",
-    textColor: "text-red-100",
-    audioSrc: "/api/audio/jhanda-uncha-rahe.mp3"
-  },
-  {
-    title: "कदम कदम बढ़ाये जा - Kadam Kadam Badhaye Ja",
-    description: "Motivational marching song of the Indian National Army",
-    image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    bgColor: "from-yellow-600 to-amber-700",
-    textColor: "text-yellow-100",
-    audioSrc: "/api/audio/kadam-kadam-badhaye-ja.mp3"
-  },
-  {
-    title: "देश रंगीला - Desh Rangila",
-    description: "Celebrating the colorful and vibrant spirit of India",
-    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    bgColor: "from-teal-600 to-cyan-700",
-    textColor: "text-teal-100",
-    audioSrc: "/api/audio/desh-rangila.mp3"
-  },
-  {
-    title: "मिले सुर मेरा तुम्हारा - Mile Sur Mera Tumhara",
-    description: "Unity in diversity - the iconic harmony of Indian culture",
-    image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    bgColor: "from-rose-600 to-red-700",
-    textColor: "text-rose-100",
-    audioSrc: "/api/audio/mile-sur-mera-tumhara.mp3"
+    audioSrc: "/api/audio/watan.mp3"
   }
+  
 ];
 
 function AudioPlayer({ audioSrc, title }: { audioSrc: string; title: string }) {

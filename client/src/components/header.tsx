@@ -2,12 +2,6 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Flag, Menu, X } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,61 +48,90 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             <button
               onClick={navigateHome}
-              className="text-gray-700 hover:text-saffron transition-colors font-medium"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium px-3 py-2 rounded-md hover:bg-saffron/10"
+              data-testid="nav-home"
             >
               Home
             </button>
             <Link
               href="/about"
-              className="text-gray-700 hover:text-saffron transition-colors font-medium"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium px-3 py-2 rounded-md hover:bg-saffron/10"
               data-testid="nav-about"
             >
               About
             </Link>
-
-            {/* Menu Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className="text-gray-700 hover:text-saffron font-medium"
-                  data-testid="button-menu-dropdown"
-                >
-                  Menu
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem
-                  onClick={() => (window.location.href = "/music")}
-                  data-testid="menu-music"
-                >
-                  🎵 Music
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => (window.location.href = "/history")}
-                  data-testid="menu-history"
-                >
-                  📚 History
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => (window.location.href = "/quiz")}
-                  data-testid="menu-quiz"
-                >
-                  📚 quiz
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link
+              href="/music"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium px-3 py-2 rounded-md hover:bg-saffron/10"
+              data-testid="nav-music"
+            >
+              Music
+            </Link>
+            <Link
+              href="/history"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium px-3 py-2 rounded-md hover:bg-saffron/10"
+              data-testid="nav-history"
+            >
+              History
+            </Link>
+            <Link
+              href="/quiz"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium px-3 py-2 rounded-md hover:bg-saffron/10"
+              data-testid="nav-quiz"
+            >
+              Quiz
+            </Link>
+          </div>
+          
+          {/* Medium Screen Navigation (Tablet) */}
+          <div className="hidden md:flex lg:hidden items-center space-x-4">
+            <button
+              onClick={navigateHome}
+              className="text-gray-700 hover:text-saffron transition-colors font-medium text-sm px-2 py-1 rounded hover:bg-saffron/10"
+              data-testid="nav-home-tablet"
+            >
+              Home
+            </button>
+            <Link
+              href="/about"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium text-sm px-2 py-1 rounded hover:bg-saffron/10"
+              data-testid="nav-about-tablet"
+            >
+              About
+            </Link>
+            <Link
+              href="/music"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium text-sm px-2 py-1 rounded hover:bg-saffron/10"
+              data-testid="nav-music-tablet"
+            >
+              Music
+            </Link>
+            <Link
+              href="/history"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium text-sm px-2 py-1 rounded hover:bg-saffron/10"
+              data-testid="nav-history-tablet"
+            >
+              History
+            </Link>
+            <Link
+              href="/quiz"
+              className="text-gray-700 hover:text-saffron transition-colors font-medium text-sm px-2 py-1 rounded hover:bg-saffron/10"
+              data-testid="nav-quiz-tablet"
+            >
+              Quiz
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden text-gray-700 hover:text-saffron"
+            className="md:hidden text-gray-700 hover:text-saffron p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            data-testid="button-mobile-menu"
           >
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -120,25 +143,26 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 border-t pt-4">
-            <div className="space-y-2">
+          <div className="md:hidden mt-4 border-t pt-4 bg-white rounded-lg shadow-lg">
+            <div className="space-y-1 px-2 pb-3">
               <button
                 onClick={navigateHome}
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
+                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
+                data-testid="mobile-nav-home"
               >
-                Home
+                🏠 Home
               </button>
               <Link
                 href="/about"
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
+                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
                 data-testid="mobile-nav-about"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                About
+                ℹ️ About
               </Link>
               <Link
                 href="/music"
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
+                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
                 data-testid="mobile-nav-music"
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -146,18 +170,20 @@ export default function Header() {
               </Link>
               <Link
                 href="/history"
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
+                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
                 data-testid="mobile-nav-history"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 📚 History
               </Link>
-              <button
-                onClick={() => scrollToSection("quiz")}
-                className="block w-full text-left py-2 text-gray-700 hover:text-saffron transition-colors"
+              <Link
+                href="/quiz"
+                className="flex items-center w-full text-left py-3 px-4 text-gray-700 hover:text-saffron hover:bg-saffron/10 transition-colors rounded-md font-medium"
+                data-testid="mobile-nav-quiz"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 ❓ Quiz
-              </button>
+              </Link>
             </div>
           </div>
         )}
