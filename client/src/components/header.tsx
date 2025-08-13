@@ -91,13 +91,13 @@ export default function Header() {
                   onClick={() => (window.location.href = "/history")}
                   data-testid="menu-history"
                 >
-                quiz
+                  📚 History
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => (window.location.href = "/quiz")}
                   data-testid="menu-quiz"
                 >
-                  📚 History
+                  📚 quiz
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
