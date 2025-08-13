@@ -2,7 +2,7 @@ import Header from "@/components/header";
 import FlagAnimation from "@/components/flag-animation";
 
 
-import QuizSection from "@/components/quiz-section";
+import QuizSectionInline from "@/components/quiz-section-inline";
 
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -73,10 +73,10 @@ export default function Home() {
         </div>
       </section>
       
+      {/* Quiz Section */}
+      <QuizSectionInline />
 
-
-      
-
+      <Footer />
     </div>
   );
 }
