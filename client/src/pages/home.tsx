@@ -1,5 +1,10 @@
 import Header from "@/components/header";
 import FlagAnimation from "@/components/flag-animation";
+import MusicSection from "@/components/music-section";
+import HistorySection from "@/components/history-section";
+import QuizSection from "@/components/quiz-section";
+import AboutSection from "@/components/about-section";
+import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Play, Pause } from "lucide-react";
 import { useAudioPlayer } from "@/hooks/use-audio-player";
@@ -68,6 +73,20 @@ export default function Home() {
         </div>
       </section>
       
+      {/* Music Section */}
+      <MusicSection />
+      
+      {/* History Section */}
+      <HistorySection />
+      
+      {/* Quiz Section */}
+      <QuizSection />
+      
+      {/* About Section */}
+      <AboutSection />
+      
+      {/* Footer */}
+      <Footer />
 
     </div>
   );

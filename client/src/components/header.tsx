@@ -53,18 +53,31 @@ export default function Header() {
             {/* Menu Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-gray-700 hover:text-saffron font-medium">
+                <Button 
+                  variant="ghost" 
+                  className="text-gray-700 hover:text-saffron font-medium"
+                  data-testid="button-menu-dropdown"
+                >
                   Menu
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem onClick={() => scrollToSection("music")}>
+                <DropdownMenuItem 
+                  onClick={() => scrollToSection("music")}
+                  data-testid="menu-music"
+                >
                   🎵 Music
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => scrollToSection("history")}>
+                <DropdownMenuItem 
+                  onClick={() => scrollToSection("history")}
+                  data-testid="menu-history"
+                >
                   📚 History
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => scrollToSection("quiz")}>
+                <DropdownMenuItem 
+                  onClick={() => scrollToSection("quiz")}
+                  data-testid="menu-quiz"
+                >
                   ❓ Quiz
                 </DropdownMenuItem>
               </DropdownMenuContent>
