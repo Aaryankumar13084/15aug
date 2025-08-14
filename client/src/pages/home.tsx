@@ -6,7 +6,7 @@ import { Play, Pause } from "lucide-react";
 import { useAudioPlayer } from "@/hooks/use-audio-player";
 
 export default function Home() {
-  const { isPlaying, isLoading, progress, duration, togglePlay } = useAudioPlayer("/api/audio/jana-gana-mana.mp3");
+  const { isPlaying, isLoading, progress, duration, togglePlay } = useAudioPlayer("/audio/jana-gana-mana.mp3");
 
   return (
     <div className="bg-warm-gray font-sans">
