@@ -1,6 +1,6 @@
 
 [build]
-  publish = "dist"
+  publish = "dist" # Assuming your build output directory is 'dist'
   command = "npm run build && cp -r server/public/audio dist/"
 
 [build.environment]
