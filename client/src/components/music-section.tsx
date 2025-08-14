@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Play, Pause, Loader2 } from "lucide-react";
 import { useAudioPlayer } from "@/hooks/use-audio-player";
 
+// Dynamic audio path detection for Replit and Netlify compatibility
+const getAudioPath = (filename: string) => {
+  // Check if we're on Netlify (netlify.app domain) or local development/Replit
+  const isNetlify = window.location.hostname.includes('netlify.app') || window.location.hostname.includes('netlify.com');
+  return isNetlify ? `/audio/${filename}` : `/api/audio/${filename}`;
+};
+
 const musicItems = [
   {
     title: "जन गण मन - Jana Gana Mana",
@@ -10,7 +17,7 @@ const musicItems = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx3uqEcwftiz6j0hcEmsLMuPWy7NaWfrJWeCPE6a0Fcw&s",
     bgColor: "from-saffron to-orange-400",
     textColor: "text-orange-100",
-    audioSrc: "/audio/jana-gana-mana.mp3",
+    audioSrc: getAudioPath("jana-gana-mana.mp3"),
     isNationalAnthem: true,
   },
   {
@@ -21,7 +28,7 @@ const musicItems = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGcKM0V6QfTz9hq8pOcyQlYxfEYYH5raDIl0XIa3FK&s",
     bgColor: "from-flag-green to-green-600",
     textColor: "text-green-100",
-    audioSrc: "/audio/vande.mp3",
+    audioSrc: getAudioPath("vande.mp3"),
   },
   {
     title: "सारे जहां से अच्छा - Saare Jahan Se Achha",
@@ -30,7 +37,7 @@ const musicItems = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPcewUlRKUrQoNLJq_3IA13Jv6E2Ux7iLfifbZUntR&s",
     bgColor: "from-navy-blue to-blue-800",
     textColor: "text-blue-100",
-    audioSrc: "/audio/sare.mp3",
+    audioSrc: getAudioPath("sare.mp3"),
   },
   {
     title: "ऐ मेरे वतन के लोगों - Ae Mere Watan Ke Logon",
@@ -39,7 +46,7 @@ const musicItems = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYuewWPdEGhbyptMYv8U35XbrX1ozELcZHBP4b2gIw8Q&s",
     bgColor: "from-purple-600 to-indigo-700",
     textColor: "text-purple-100",
-    audioSrc: "/audio/watan.mp3",
+    audioSrc: getAudioPath("watan.mp3"),
   },
   {
     title: "India Wale",
@@ -47,7 +54,7 @@ const musicItems = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYWl0haR_bLTeev3Ycth_1ou7GLYxDr_xW232QIN6-&s",
     bgColor: "from-orange-500 to-red-600",
     textColor: "text-white",
-    audioSrc: "/audio/indiawale.mp3",
+    audioSrc: getAudioPath("indiawale.mp3"),
   },
 ];
 

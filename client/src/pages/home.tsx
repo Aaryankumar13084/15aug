@@ -6,7 +6,13 @@ import { Play, Pause } from "lucide-react";
 import { useAudioPlayer } from "@/hooks/use-audio-player";
 
 export default function Home() {
-  const { isPlaying, isLoading, progress, duration, togglePlay } = useAudioPlayer("/audio/jana-gana-mana.mp3");
+  // Dynamic audio path detection for Replit and Netlify compatibility
+  const getAudioPath = (filename: string) => {
+    const isNetlify = window.location.hostname.includes('netlify.app') || window.location.hostname.includes('netlify.com');
+    return isNetlify ? `/audio/${filename}` : `/api/audio/${filename}`;
+  };
+
+  const { isPlaying, isLoading, progress, duration, togglePlay } = useAudioPlayer(getAudioPath("jana-gana-mana.mp3"));
 
   return (
     <div className="bg-warm-gray font-sans">
